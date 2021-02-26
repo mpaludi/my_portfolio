@@ -1,0 +1,39 @@
+.AboutMe {
+    display: flex;
+    flex-direction: row;
+}
+
+.AboutMe h4 {
+    font-family: 'TT Norms',Arial,sans-serif;
+    margin-left: 2%;
+    margin-bottom: 0;
+    color:rgb(255, 255, 255);
+}
+
+.AboutMe h1 {
+    padding: 0;
+    font-size: calc(30px + 4vw);;
+    margin-top: 0;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 0;
+    color:rgb(161, 109, 61);
+}
+
+.AboutMe p {
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+    justify-content: flex-start;
+}
+
+.AboutMe div img {
+    padding-top: 15%;
+    padding-bottom: 5%;
+    overflow: hidden;
+    vertical-align: bottom;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    
+}

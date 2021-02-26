@@ -1,5 +1,5 @@
 {
-  "homepage": "https://Marian00P.github.io/my_portfolio",
+  "homepage": "https://marian00p.github.io/my_portfolio/",
   "name": "my_portfolio",
   "version": "0.1.0",
   "private": true,
@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^12.7.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-responsive": "^8.2.0",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.0"
   },
