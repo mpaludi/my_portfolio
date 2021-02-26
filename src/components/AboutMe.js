@@ -18,21 +18,46 @@ function AboutMe(props) {
   return(
     <div className="AboutMe">
 
-      <div>
-        <h4>
-          ¡Hola! Soy
-        </h4>
-        <h1>Mariano Paludi</h1>
-        <p>
-          Tengo 21 años, soy Desarrollador de Software JR,
-          actualmente estoy en el cuarto año de mi carrera Licenciatura en Ciencias
-          de la Computación de FAMAF-UNC.
-          Acá vengo a hablarles un poco acerca de mí, asi que adelante!
+      <div id='container'>
+        <p id='aboutme-intro'>
+          <cite>
+            ¡hola!, soy
+          </cite>
         </p>
+        <p id='name'>
+          <strong>Mariano Paludi</strong>
+        </p>
+        <p id='aboutme'>
+          <cite>
+            Tengo 21 años, soy Desarrollador de Software JR,
+            actualmente estoy en el cuarto año de mi carrera Licenciatura en Ciencias
+            de la Computación de FAMAF-UNC.
+            Acá vengo a hablarles un poco acerca de mí, asi que adelante!
+          </cite>
+        </p>
+        <br/>
+        <br/>
+        <ul id='container-options'>
+          <li>
+            <h3>Concacto</h3>
+          </li>
+          <li>
+            <h3>Get CV</h3>
+          </li>
+          <li>
+            <h3>Projectos</h3>
+          </li>
+          <li>
+            <h3>Habilidades</h3>
+          </li>
+          <li>
+            <h3>Lenguajes</h3>
+          </li>
+        </ul>
       </div>
       {
         isPhone ? "" :
-      <div style={styles}>
+      <div id="container-img" style={styles}>
         <img src={me} alt="me"/>
       </div>
       }
