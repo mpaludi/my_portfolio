@@ -1,19 +1,23 @@
 .AboutMe {
     display: flex;
     flex-direction: row;
-    background-color: beige;
+    background-color: rgb(18, 20, 31);
+    padding-left: 300px;
+    position: relative;
+    min-height: 100vh;
+    z-index: 1;
 }
 
 #aboutme-intro {
     margin-left: 5%;
     margin-right: 5%;
     margin-bottom: 0;
-    color:rgb(47, 47, 47);
+    color:rgb(164, 172, 196);
 }
 
 
 #aboutme {
-    color: rgb(47, 47, 47);
+    color: rgb(164, 172, 196);
     margin-left: 5%;
     margin-right: 5%;
     text-align: center;
@@ -29,13 +33,14 @@
     max-width: 100%;
     width: auto;
     height: auto;
-    padding: 15%;
+    padding-top: 15%;
+    overflow: hidden;
 }
 
 #name {
     text-align: center;
     font-size: calc(30px + 4vw);
-    color:rgb(161, 109, 61);
+    color:rgb(255, 255, 255);
     margin-top: 0%;
     margin-left: 5%;
     margin-right: 5%;
@@ -49,9 +54,11 @@
     margin-left: 5%;
     margin-right: 5%;
     display: flex;
+    justify-items: center;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    
 }
 
 .AboutMe li {
@@ -59,13 +66,15 @@
     display: list-item;
     color: black;
     width: 20vh;
-    background-color: rgb(161, 109, 61);
+    background-color: rgb(164, 172, 196);
     margin: 1vh;
+    padding: 1vh;
     border-radius: 5px;
-    transition: background-color 300ms ease-in-out;
-    -webkit-transition: background-color 300ms ease-in-out;
+    border: .5vh solid transparent;
+    transition: border-color .2s ease-in-out;
+    -webkit-transition: border-color .2s ease-in-out;
 }
 
 .AboutMe li:hover {
-    background-color: rgb(255, 123, 0);
+    background-color: rgb(71, 103, 199);
 }

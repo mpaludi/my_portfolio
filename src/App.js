@@ -1,15 +1,13 @@
 import AboutMe from './components/AboutMe';
-import './css/App.css';
+import Nav from './components/Nav';
+import './css/App.scss';
 
-/*const userScreen = {
-  width: window.screen.width, 
-  height: window.screen.height 
-}*/
 
 function App() {
 
   return (
     <div className="App">
+      <Nav/>
       <AboutMe/>
     </div>
   );

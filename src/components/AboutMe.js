@@ -1,16 +1,30 @@
 import React from 'react';
 import me from '../images/me.jpg'
-import '../css/AboutMe.css'
+import '../css/AboutMe.scss'
+import '../css/SkillProgress.scss'
 import { useMediaQuery } from "react-responsive";
 
-function AboutMe(props) {
+function AboutMe() {
 
   const isPhone = useMediaQuery({query: `(max-width: 760px)`});
-  const userScreen = {
-    width: window.screen.width, 
-    height: window.screen.height
-  }
-  console.log(userScreen)
+
+  const texts = {
+    introES: "¡hola! soy",
+    introEN: "¡hello! i'm",
+    contactES: "Contacto",
+    contactEN: "Contact",
+    skillsES: "Habilidades",
+    skillsEN: "Skills",
+    projectES: "Proyectos",
+    projectEN: "Projects",
+    techES: "Tecnologías",
+    techEN: "Technologies",
+    getcvES: "Obtener CV",
+    getcvEN: "Get CV",
+    aboutmeES: "Tengo 21 años, soy Desarrollador de Software JR, actualmente estoy en el cuarto año de mi carrera Licenciatura en Ciencias de la Computación de FAMAF-UNC. Acá vengo a hablarles un poco acerca de mí, asi que adelante!",
+    aboutmeEN: "21 year old Software Developer JR, I'm currently in the fourth year of my degree in Computer Science at FAMAF-UNC. Here I come to tell you a little about myself, so go ahead!" 
+}
+
   const styles = {
     "vertical-align": "bottom"
   }
@@ -21,7 +35,7 @@ function AboutMe(props) {
       <div id='container'>
         <p id='aboutme-intro'>
           <cite>
-            ¡hola!, soy
+            {texts.introEN}
           </cite>
         </p>
         <p id='name'>
@@ -29,38 +43,29 @@ function AboutMe(props) {
         </p>
         <p id='aboutme'>
           <cite>
-            Tengo 21 años, soy Desarrollador de Software JR,
-            actualmente estoy en el cuarto año de mi carrera Licenciatura en Ciencias
-            de la Computación de FAMAF-UNC.
-            Acá vengo a hablarles un poco acerca de mí, asi que adelante!
+            {texts.aboutmeEN}
           </cite>
         </p>
         <br/>
         <br/>
         <ul id='container-options'>
           <li>
-            <h3>Concacto</h3>
+            <h4>{texts.contactEN}</h4>
           </li>
           <li>
-            <h3>Get CV</h3>
+            <h4>{texts.getcvEN}</h4>
           </li>
           <li>
-            <h3>Projectos</h3>
+            <h4>{texts.projectEN}</h4>
           </li>
           <li>
-            <h3>Habilidades</h3>
+            <h4>{texts.skillsEN}</h4>
           </li>
           <li>
-            <h3>Lenguajes</h3>
+            <h4>{texts.techEN}</h4>
           </li>
         </ul>
       </div>
-      {
-        isPhone ? "" :
-      <div id="container-img" style={styles}>
-        <img src={me} alt="me"/>
-      </div>
-      }
 
     </div>
   )
