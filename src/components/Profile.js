@@ -10,6 +10,8 @@ function Profile() {
         <div className="profile-content">
           <p> Bla bla bla bla bla  </p>
         </div>
+        <br/>
+        <br/>
         <ul id='container-buttons'>
           <li>
             <h4>Fortalezas</h4>
