@@ -4,11 +4,8 @@ import me from '../images/me.jpg'
 
 function Nav() {
   return (
-    <div>
+    <div class="container-nav">
       <nav class="mi-header">
-        <button class="XXXmi-header-toggler">
-          <i class="lni-menu size-md "></i>
-        </button>
         <div class="mi-header-inner">
           <div class="mi-header-image">
             <a href="/">
@@ -18,7 +15,7 @@ function Nav() {
           <ul class="mi-header-menu">
             <li> <a href="/"> <span>Home</span> </a>
             </li>
-            <li><a href="/about"><span>About</span></a>
+            <li><a href="/profile"><span>Profile</span></a>
             </li>
             <li><a href="/resume">
               <span>Resume</span></a>

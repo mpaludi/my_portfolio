@@ -4,6 +4,12 @@ nav {
     display: block;
 }
 
+@media screen and (max-width: 600px) {
+    .container-nav {
+        width: 0;
+    }
+}
+
 .mi-header {
     position: fixed;
     align-items: center;
@@ -82,13 +88,26 @@ nav {
     color: rgb(164, 172, 196);
     font-weight: 600;
     position: relative;
-    z-index: 1;
     transition: all 0.4s ease-out 0s;
     overflow: hidden;
-    background-color: transparent;
     text-decoration: none;
     box-sizing: border-box;
     margin: 0px;
+    &:before {
+        content: "";
+        display: block;
+        width: 0;
+        left: 50%;
+        position: absolute;
+        background-color: aliceblue;
+        bottom: 0;
+        transition: all .3s;
+        height: 1px;
+    }
+    &:hover::before{
+       width: 100%;
+       left: 0;
+    }
 }
 
 .mi-header span {

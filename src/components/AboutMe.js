@@ -1,4 +1,5 @@
 import React from 'react';
+import Nav from "./Nav";
 import me from '../images/me.jpg'
 import '../css/AboutMe.scss'
 import '../css/SkillProgress.scss'
@@ -9,7 +10,7 @@ function AboutMe() {
   const isPhone = useMediaQuery({query: `(max-width: 760px)`});
 
   const texts = {
-    introES: "¡hola! soy",
+    introES: "¡hola! yo soy",
     introEN: "¡hello! i'm",
     contactES: "Contacto",
     contactEN: "Contact",
@@ -30,44 +31,42 @@ function AboutMe() {
   }
 
   return(
-    <div className="AboutMe">
-
-      <div id='container'>
-        <p id='aboutme-intro'>
-          <cite>
-            {texts.introEN}
-          </cite>
-        </p>
-        <p id='name'>
-          <strong>Mariano Paludi</strong>
-        </p>
-        <p id='aboutme'>
-          <cite>
-            {texts.aboutmeEN}
-          </cite>
-        </p>
-        <br/>
-        <br/>
-        <ul id='container-options'>
-          <li>
-            <h4>{texts.contactEN}</h4>
-          </li>
-          <li>
-            <h4>{texts.getcvEN}</h4>
-          </li>
-          <li>
-            <h4>{texts.projectEN}</h4>
-          </li>
-          <li>
-            <h4>{texts.skillsEN}</h4>
-          </li>
-          <li>
-            <h4>{texts.techEN}</h4>
-          </li>
-        </ul>
+      <div className="AboutMe">
+        <div id='container'>
+          <p id='aboutme-intro'>
+            <cite>
+              {texts.introEN}
+            </cite>
+          </p>
+          <p id='name'>
+            <strong>Mariano Paludi</strong>
+          </p>
+          <p id='aboutme'>
+            <cite>
+              {texts.aboutmeEN}
+            </cite>
+          </p>
+          <br/>
+          <br/>
+          <ul id='container-options'>
+            <li>
+              <h4>{texts.contactEN}</h4>
+            </li>
+            <li>
+              <h4>{texts.getcvEN}</h4>
+            </li>
+            <li>
+              <h4>{texts.projectEN}</h4>
+            </li>
+            <li>
+              <h4>{texts.skillsEN}</h4>
+            </li>
+            <li>
+              <h4>{texts.techEN}</h4>
+            </li>
+          </ul>
+        </div>
       </div>
-
-    </div>
   )
 }
 
