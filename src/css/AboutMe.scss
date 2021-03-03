@@ -46,34 +46,4 @@
     text-shadow: 2px 2px 5px rgb(20, 20, 20);;
 }
 
-#container-options {
-    list-style: none;
-    align-content: center;
-    padding-left: 0;
-    margin-left: 5%;
-    margin-right: 5%;
-    display: flex;
-    justify-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    
-}
 
-.AboutMe li {
-    text-align: center;
-    display: list-item;
-    color: black;
-    width: 20vh;
-    background-color: rgb(164, 172, 196);
-    margin: 1vh;
-    padding: 1vh;
-    border-radius: 5px;
-    border: .5vh solid transparent;
-    transition: border-color .2s ease-in-out;
-    -webkit-transition: border-color .2s ease-in-out;
-}
-
-.AboutMe li:hover {
-    background-color: rgb(71, 103, 199);
-}

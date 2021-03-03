@@ -1,8 +1,6 @@
 import React from 'react';
-import Nav from "./Nav";
-import me from '../images/me.jpg'
 import '../css/AboutMe.scss'
-import '../css/SkillProgress.scss'
+import '../css/Button.scss'
 import { useMediaQuery } from "react-responsive";
 
 function AboutMe() {
@@ -48,7 +46,7 @@ function AboutMe() {
           </p>
           <br/>
           <br/>
-          <ul id='container-options'>
+          <ul id='container-buttons'>
             <li>
               <h4>{texts.contactEN}</h4>
             </li>
