@@ -4,6 +4,7 @@ import './css/index.scss';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Profile from './components/Profile';
 import AboutMe from './components/AboutMe';
+import Contact from './components/Contact';
 import Nav from './components/Nav';
 import reportWebVitals from './reportWebVitals';
 
@@ -19,6 +20,12 @@ ReactDOM.render(
         <div className="container-page">
           <Nav/>
           <Profile/>
+        </div>
+      </Route>
+      <Route path="/contact">
+        <div className="container-page">
+          <Nav/>
+          <Contact/>
         </div>
       </Route>
     </Router>,
