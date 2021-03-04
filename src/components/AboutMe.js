@@ -5,7 +5,7 @@ import { useMediaQuery } from "react-responsive";
 
 function AboutMe() {
 
-  const isPhone = useMediaQuery({query: `(max-width: 760px)`});
+  // const isPhone = useMediaQuery({query: `(max-width: 760px)`});
 
   const texts = {
     introES: "¡hola! yo soy",
@@ -23,10 +23,6 @@ function AboutMe() {
     aboutmeES: "Tengo 21 años, soy Desarrollador de Software JR, actualmente estoy en el cuarto año de mi carrera Licenciatura en Ciencias de la Computación de FAMAF-UNC. Acá vengo a hablarles un poco acerca de mí, asi que adelante!",
     aboutmeEN: "21 year old Software Developer JR, I'm currently in the fourth year of my degree in Computer Science at FAMAF-UNC. Here I come to tell you a little about myself, so go ahead!" 
 }
-
-  const styles = {
-    "vertical-align": "bottom"
-  }
 
   return(
       <div className="AboutMe">
@@ -48,19 +44,7 @@ function AboutMe() {
           <br/>
           <ul id='container-buttons'>
             <li>
-              <h4>{texts.contactEN}</h4>
-            </li>
-            <li>
               <h4>{texts.getcvEN}</h4>
-            </li>
-            <li>
-              <h4>{texts.projectEN}</h4>
-            </li>
-            <li>
-              <h4>{texts.skillsEN}</h4>
-            </li>
-            <li>
-              <h4>{texts.techEN}</h4>
             </li>
           </ul>
         </div>

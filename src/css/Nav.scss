@@ -6,12 +6,6 @@ nav {
     display: block;
 }
 
-@media screen and (max-width: 600px) {
-    .container-nav {
-        width: 0;
-    }
-}
-
 .mi-header {
     position: fixed;
     align-items: center;
@@ -24,6 +18,10 @@ nav {
     background: rgb(25, 29, 43);
     border-right: 1px solid rgb(46, 52, 78);
     transition: all 0.4s ease-out 0s;
+
+    @media screen and (max-width: 600px) {
+        width: 0;
+    }
 }
 
 .mi-header-inner {

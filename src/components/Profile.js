@@ -1,15 +1,20 @@
-import React from 'react';
-import '../css/Profile.scss'
+import React from 'react'
+import '../css/Page.scss'
 import '../css/Button.scss'
 
 function Profile() {
 
   return(
-    <div className="profile-container">
-        <h2>Profile</h2>
-        <div className="profile-content">
-          <p> Bla bla bla bla bla  </p>
+    <div className="page-container">
+        <h2 class="profile" >Profile</h2>
+        <div className="page-content">
+          <p> Me considero alguien muy sociable, por lo que me gusta trabajar
+           en equipo y ayudar al resto. Me gustan demasiado los desafios
+           por lo que siempre estoy predispuesto ante nuevos problemas para
+           encararlos con gran entusiasmo. Soy proactivo, y tengo muchas ganas de seguir aprendiendo. </p>
         </div>
+        <br/>
+        <br/>
         <br/>
         <br/>
         <ul id='container-buttons'>

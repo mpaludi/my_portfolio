@@ -1,6 +1,6 @@
 @import "./variables.scss";
 
-.profile-container {
+.page-container {
     display: block;
     margin: 0;
     padding: 0;
@@ -11,36 +11,23 @@
     padding-left: 18.75rem;
     position: relative;
     min-height: 100vh;
-}
-
-@media only screen and (max-width: 1599px) and (min-width: 1200px) {
-    .profile-container {
-        padding-left: 18.75rem;
+    @media screen and (max-width: 600px) {
+        padding-left: 0;
     }
 }
 
-@media screen and (max-width: 600px) {
-    .nav {
-        display: flex;
-        flex-direction: column;
-        background-color: $bg-container-page;
-        padding: 0rem;
-        position: relative;
-        min-height: 100vh;
-        z-index: 1;
-    }
-}
 
-.profile-container h2 {
+.page-container h2 {
     background-color: $bg-container-page;
     background: $bg-container-page;
     color: rgb(164, 172, 196);
     text-align: center;   
-    font-size: 1.48em;
+    font-size: 10em; // 1.48
     text-transform: uppercase;
     font-style: italic;
     padding: 0;
-    margin-top: 14.2rem;
+    margin-top: 4.5rem; // 14.2rem
+    margin-bottom: 0;
     position: relative;
     &::after {
         content: "";
@@ -52,9 +39,29 @@
         height: 1px;
         position: absolute;
     }
+    &.profile::before, &.contact::before, &.projects::before, &.interests::before {
+        display:block;
+        text-align: center;
+        top: 0;
+        opacity: 35%;
+        position:fixed;
+    }
+    &.contact::before {
+        content: "CONTACT";
+    }
+    &.profile::before {
+        content: "PROFILE";
+    }
+    &.projects::before {
+        content: "PROJECTS";
+    }
+    &.interests::before {
+        content: "INTERESTS";
+    }
 }
 
-.profile-content {
+.page-content {
+    margin-top: 3rem;
     margin-left: 10%;
     height: 20rem;
     width: calc(100% - 10% - 10%);
@@ -63,7 +70,7 @@
     &::after {
         content: "";
         display: block;
-        bottom: -1.228125rem;
+        bottom: -3rem;
         width: 100%;
         background:  rgb(50, 56, 73);;
         display: flex;
@@ -72,7 +79,7 @@
     }
 }
 
-.profile-content p{
+.page-content p{
     padding: 1rem;
     color: aliceblue;
 }

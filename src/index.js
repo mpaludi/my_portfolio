@@ -5,27 +5,41 @@ import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Profile from './components/Profile';
 import AboutMe from './components/AboutMe';
 import Contact from './components/Contact';
+import Projects from './components/Projects';
+import Interests from './components/Interests';
 import Nav from './components/Nav';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
     <Router>
       <Route path="/" exact={true}>
-        <div className="container-page">
+        <div className="container-app">
           <Nav/>
           <AboutMe/>
         </div>
       </Route>
       <Route path="/profile">
-        <div className="container-page">
+        <div className="container-app">
           <Nav/>
           <Profile/>
         </div>
       </Route>
       <Route path="/contact">
-        <div className="container-page">
+        <div className="container-app">
           <Nav/>
           <Contact/>
+        </div>
+      </Route>
+      <Route path="/projects">
+        <div className="container-app">
+          <Nav/>
+          <Projects/>
+        </div>
+      </Route>
+      <Route path="/interests">
+        <div className="container-app">
+          <Nav/>
+          <Interests/>
         </div>
       </Route>
     </Router>,

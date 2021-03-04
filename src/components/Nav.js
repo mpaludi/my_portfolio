@@ -17,10 +17,10 @@ function Nav() {
             </li>
             <li><a href="/profile"><span>Profile</span></a>
             </li>
-            <li><a href="/">
+            <li><a href="/projects">
               <span>Projects</span></a>
             </li>
-            <li><a href="/"><span>Interests</span></a>
+            <li><a href="/interests"><span>Interests</span></a>
             </li>
             <li><a href="/contact"><span>Contact</span></a>
             </li>
