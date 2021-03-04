@@ -9,6 +9,7 @@ import Projects from './components/Projects';
 import Interests from './components/Interests';
 import Nav from './components/Nav';
 import reportWebVitals from './reportWebVitals';
+import Resume from './components/Resume';
 
 ReactDOM.render(
     <Router>
@@ -16,6 +17,12 @@ ReactDOM.render(
         <div className="container-app">
           <Nav/>
           <AboutMe/>
+        </div>
+      </Route>
+      <Route path="/resume" exact={true}>
+        <div className="container-app">
+          <Nav/>
+          <Resume/>
         </div>
       </Route>
       <Route path="/profile">

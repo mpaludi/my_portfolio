@@ -1,11 +1,9 @@
 @import "./variables.scss";
 
 .page-container {
-    display: block;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-align: left;
     flex-direction: column;
     background-color: $bg-container-page;
     padding-left: 18.75rem;
@@ -13,6 +11,7 @@
     min-height: 100vh;
     @media screen and (max-width: 600px) {
         padding-left: 0;
+        
     }
 }
 
@@ -29,6 +28,23 @@
     margin-top: 4.5rem; // 14.2rem
     margin-bottom: 0;
     position: relative;
+
+    @media screen and (max-width: 768px){ // Tablet
+        font-size: 6.04587156em;
+    }
+
+    @media screen and (max-width: 425px){ // Mobile L
+        font-size: 5.7em;
+    }
+
+    @media screen and (max-width: 375px){ // Mobile M
+        font-size: 5.1560em;
+    }
+
+    @media screen and (max-width: 320px) { // Mobile S
+        font-size: 4.4em;
+    }
+
     &::after {
         content: "";
         display: block;
@@ -39,7 +55,8 @@
         height: 1px;
         position: absolute;
     }
-    &.profile::before, &.contact::before, &.projects::before, &.interests::before {
+    &.profile::before, &.contact::before, &.projects::before,
+    &.interests::before, &.resume::before {
         display:block;
         text-align: center;
         top: 0;
@@ -58,9 +75,13 @@
     &.interests::before {
         content: "INTERESTS";
     }
+    &.resume::before {
+        content: "RESUME";
+    }
 }
 
 .page-content {
+    display:block;
     margin-top: 3rem;
     margin-left: 10%;
     height: 20rem;
@@ -77,9 +98,4 @@
         height: 1px;
         position: absolute;
     }
-}
-
-.page-content p{
-    padding: 1rem;
-    color: aliceblue;
 }

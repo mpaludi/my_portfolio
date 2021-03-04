@@ -42,11 +42,6 @@ function AboutMe() {
           </p>
           <br/>
           <br/>
-          <ul id='container-buttons'>
-            <li>
-              <h4>{texts.getcvEN}</h4>
-            </li>
-          </ul>
         </div>
       </div>
   )

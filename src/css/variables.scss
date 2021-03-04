@@ -1,5 +1,6 @@
 /** @format */
 
+
 // Colors
 $bg-color: rgb(25, 29, 43);
 $bg-container-page: rgb(18, 20, 31);
@@ -20,7 +21,7 @@ $layout-dektop: "only screen and (min-width: 1920px)";
 $layout-desktop-xs: "only screen and (min-width: 1600px) and (max-width: 1919px)";
 $layout-laptop: "only screen and (min-width: 1200px) and (max-width: 1599px)";
 $layout-notebook: "only screen and (min-width: 992px) and (max-width: 1199px)";
-$layout-tablet: "only screen and (min-width: 768px) and (max-width: 991px)";
+$layout-tablet: "(min-width: 768px)";
 $layout-mobile-lg: "only screen and (max-width: 767px)";
 $layout-mobile-sm: "only screen and (max-width: 575px)";
 $layout-mobile-xs: "only screen and (max-width: 480px)";

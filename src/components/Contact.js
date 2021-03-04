@@ -1,6 +1,7 @@
 import React from 'react'
 import '../css/Page.scss'
 import '../css/Button.scss'
+import '../css/Contact.scss'
 
 function Contact() {
 
@@ -8,9 +9,18 @@ function Contact() {
     <div className="page-container">
         <h2 class="contact" >Contact</h2>
         <div className="page-content">
-          <p> E-mail:   ______________________</p>
-          <p> Asunto:   _____________________</p>
-          <p> Texto:   ______________________</p>
+          <a> E-mail: </a> <input placeholder="Insert your email"></input>
+          <br/>
+          <br/>
+          <br/>
+          <a> Subject: </a> <input placeholder="Insert your subject"></input>
+          <br/>
+          <br/>
+          <br/>
+          <a> Text: </a> <input placeholder="Insert text" class="text"></input>
+          <br/>
+          <br/>
+          <br/>
           <button>Send</button>
         </div>
         <br/>
