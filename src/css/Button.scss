@@ -1,3 +1,5 @@
+@import '../css/variables.scss';
+
 #container-buttons {
     list-style: none;
     align-content: center;
@@ -13,6 +15,7 @@
 }
 
 #container-buttons li {
+    opacity: 50%;
     text-align: center;
     display: list-item;
     color: black;
@@ -24,6 +27,62 @@
     border: .5vh solid transparent;
     transition: border-color .2s ease-in-out;
     -webkit-transition: border-color .2s ease-in-out;
+    &.ig {
+        width: 15vh;
+        background-color: $instagram;
+        &:hover {
+            background-color: darken($instagram, 15);
+        }
+    }
+    &.link {
+        width: 15vh;
+        background-color: $linkedin;
+        &:hover {
+            background-color: darken($linkedin, 15);
+        }
+    }
+    &.wapp {
+        width: 15vh;
+        background-color: $whatsapp;
+        &:hover {
+            background-color: darken($whatsapp, 15);
+        }
+    }
+    &.tw {
+        width: 15vh;
+        background-color: $twitter;
+        &:hover {
+            background-color: darken($twitter, 15);
+        }
+    }
+}
+
+.send {
+    text-transform: uppercase;
+    padding: 1rem;
+    position: absolute;
+    margin-right: 2.375rem;
+    margin-bottom: 2.375rem;
+    right: 0;
+    bottom: 0;
+    font-style: italic;
+    color: beige;
+    background-color: $bg-container-page;
+    @media screen and (max-width: 768px) {
+        padding: 10px;
+        font-size: 10px;
+        margin: 10px;
+    }
+    @media screen and (max-width: 425px) {
+        padding: 10px;
+        font-size: 10px;
+        margin: 5px;
+    }
+    @media screen and (max-width: 320px) {
+        padding: 10px;
+        font-size: 10px;
+        margin: 0;
+    }
 }
 
 #container-buttons li:hover {

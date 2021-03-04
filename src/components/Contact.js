@@ -21,24 +21,24 @@ function Contact() {
           <br/>
           <br/>
           <br/>
-          <button>Send</button>
+          <button class='send'>Send</button>
         </div>
         <br/>
         <br/>
         <br/>
         <br/>
         <ul id='container-buttons'>
-          <li>
+          <li class='ig'>
             <h4>Instagram</h4>
           </li>
-          <li>
+          <li class='link'>
             <h4>LinkedIn</h4>
           </li>
-          <li>
+          <li class='wapp'>
             <h4>WhatsApp</h4>
           </li>
-          <li>
-            <h4>Telegram</h4>
+          <li class='tw'>
+            <h4>Twitter</h4>
           </li>
         </ul>
     </div>
