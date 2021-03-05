@@ -13,16 +13,14 @@ function Nav() {
             </a>
           </div>
           <ul class="mi-header-menu">
-            <li> <a href="/"> <span>Home</span> </a>
+            <li> <a href="/resume"> <span>Resume</span> </a>
             </li>
             <li><a href="/profile"><span>Profile</span></a>
             </li>
-            <li><a href="/resume">
-              <span>Resume</span></a>
+            <li><a href="/projects">
+              <span>Projects</span></a>
             </li>
-            <li><a href="/portfolios"><span>Portfolios</span></a>
-            </li>
-            <li><a href="/blogs"><span>Blogs</span></a>
+            <li><a href="/interests"><span>Interests</span></a>
             </li>
             <li><a href="/contact"><span>Contact</span></a>
             </li>

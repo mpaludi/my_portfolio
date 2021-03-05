@@ -1,0 +1,26 @@
+@import "./variables.scss";
+
+.page-content input {
+    position: absolute;
+    display: block;
+    color: antiquewhite;
+    border-color: $bg-container-page;
+    background-color: $bg-container-page;
+    margin: 1rem 0rem 0rem 0rem;
+    width: 50%;
+    left: 100px;
+    &.text {
+        height: 9.375rem;
+    }
+    &.text::placeholder {
+        text-align: center;
+    }
+}
+
+.page-content p, .page-content a{
+    position: absolute;
+    padding: 1rem 0rem 0rem 1rem;
+    justify-content: center;
+    font-style: italic;
+    color: aliceblue;
+}

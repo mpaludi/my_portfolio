@@ -1,13 +1,9 @@
+@import "./variables.scss";
+
 nav {
     align-items: center;
     align-content: center;
     display: block;
-}
-
-@media screen and (max-width: 600px) {
-    .container-nav {
-        width: 0;
-    }
 }
 
 .mi-header {
@@ -22,6 +18,10 @@ nav {
     background: rgb(25, 29, 43);
     border-right: 1px solid rgb(46, 52, 78);
     transition: all 0.4s ease-out 0s;
+
+    @media screen and (max-width: 600px) {
+        width: 0;
+    }
 }
 
 .mi-header-inner {
@@ -82,27 +82,32 @@ nav {
 .mi-header-menu li a {
     padding: 20px 0px;
     text-transform: uppercase;
+    margin: 1.2rem;
     font-size: 0.94rem;
+    background-color: $bg-container-page;
     letter-spacing: 1px;
     display: block;
     color: rgb(164, 172, 196);
     font-weight: 600;
     position: relative;
+    border-bottom-width: 4px;
+    box-shadow: 0 0 0 0 1px rgba(#fff, .15) inset;
+    border: 2px solid darken($bg-container-page,10);
     transition: all 0.4s ease-out 0s;
     overflow: hidden;
+    text-shadow: 0 -1px 1px rgba(#000, .5);
     text-decoration: none;
-    box-sizing: border-box;
-    margin: 0px;
+    box-sizing: border-box; 
     &:before {
         content: "";
         display: block;
         width: 0;
         left: 50%;
         position: absolute;
-        background-color: aliceblue;
+        background-color: rgb(66, 73, 92);
         bottom: 0;
         transition: all .3s;
-        height: 1px;
+        height: 3px;
     }
     &:hover::before{
        width: 100%;
