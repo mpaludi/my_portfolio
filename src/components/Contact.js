@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import ig from '../images/social networks/ig.png'
 import wapp from '../images/social networks/wapp.png'
 import link from '../images/social networks/link.png'
-import emailjs, { send } from 'emailjs-com'
+import emailjs from 'emailjs-com'
 import apikeys from "../services/apikeys"
 
 import '../css/Page.scss'
@@ -11,13 +11,13 @@ import '../css/Contact.scss'
 
 function Contact() {
 
+  const [sendingStatus, setSendingstatus] = useState("");
   const [emptyEmail, setEmptyemail] = useState("");
   const [emptySubject, setEmptysubject] = useState("");
   const [emptyMessage, setEmptymessage] = useState("");
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
-  const [formSubmitSuccessful, setFormSubmitSuccessful] = useState(false);
   const [incorrectEmail, setIncEmail] = useState("");
 
   function validateEmail(email) {
@@ -32,6 +32,7 @@ function Contact() {
 
   const handleEmail = (e) => {
     setEmail(e.target.value)
+    console.log(document.getElementById("email").value)
     setEmptyemail("");
     setIncEmail("");
   }
@@ -52,7 +53,10 @@ function Contact() {
     user
     ).then((res) => {
       if(res.status === 200) {
-        setFormSubmitSuccessful(true)
+        document.getElementById("email").value = "";
+        document.getElementById("subject").value = "";
+        document.getElementById("message").value = "";
+        setSendingstatus("Message sent successfully.")
       }
     })
     .catch((err) => console.error('Failed to send message. Error: ', err))
@@ -87,28 +91,30 @@ function Contact() {
         <h2 class="contact" >Contact</h2>
 
         <div className="page-content contact">
-          <form action='#' class="send-message-form" onSubmit={onSubmit}>
+          <form id='email-form' action='#' class="send-message-form" onSubmit={onSubmit}>
             <div class='form-field'>
-              <label>Enter your e-mail* </label> 
-              <input name="email" onChange={handleEmail}></input>
+              <label>Enter your e-mail * </label> 
+              <input id='email' name="email" onChange={handleEmail}></input>
               <p id='error-message'>{(incorrectEmail !== "") ? incorrectEmail : emptyEmail}</p>
               
             </div>
             <div class='form-field'>
-              <label>Enter your subject* </label> 
-              <input name="subject" onChange={handleSubject}></input>
+              <label>Enter your subject * </label> 
+              <input id='subject' name="subject" onChange={handleSubject}></input>
               <p id='error-message'>{emptySubject}</p>
             </div>
             <div class='form-field'>
-              <label for='conctact-form-message'>Enter your message* </label> 
-              <textarea name="message" class="contact-form-message" cols="45" rows="4"
+              <label for='conctact-form-message'>Enter your message * </label> 
+              <textarea id='message' name="message" class="contact-form-message" cols="45" rows="4"
                 onChange={handleMessage}
               />
               <p id='error-message'>{emptyMessage}</p>
             </div>
           </form>
+
           <div class='button-send-field'>
             <button class='send' onClick={onSubmit}>Send</button>
+            <p id='status'> {sendingStatus}</p>
           </div>
 
 
