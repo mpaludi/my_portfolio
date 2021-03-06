@@ -8,21 +8,21 @@ function Nav() {
       <nav class="mi-header">
         <div class="mi-header-inner">
           <div class="mi-header-image">
-            <a href="/">
+            <a href="/my_portfolio">
             <img alt="marian" src={me}/>
             </a>
           </div>
           <ul class="mi-header-menu">
-            <li> <a href="/resume"> <span>Resume</span> </a>
+            <li> <a href="/my_portfolio/resume"> <span>Resume</span> </a>
             </li>
-            <li><a href="/profile"><span>Profile</span></a>
+            <li><a href="/my_portfolio/profile"><span>Profile</span></a>
             </li>
-            <li><a href="/projects">
+            <li><a href="/my_portfolio/projects">
               <span>Projects</span></a>
             </li>
-            <li><a href="/interests"><span>Interests</span></a>
+            <li><a href="/my_portfolio/interests"><span>Interests</span></a>
             </li>
-            <li><a href="/contact"><span>Contact</span></a>
+            <li><a href="/my_portfolio/contact"><span>Contact</span></a>
             </li>
           </ul>
         </div>

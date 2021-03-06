@@ -13,37 +13,37 @@ import Resume from './components/Resume';
 
 ReactDOM.render(
     <Router>
-      <Route path="/" exact={true}>
+      <Route exact path="/my_portfolio" >
         <div className="container-app">
           <Nav/>
           <AboutMe/>
         </div>
       </Route>
-      <Route path="/resume" exact={true}>
+      <Route path="/my_portfolio/resume">
         <div className="container-app">
           <Nav/>
           <Resume/>
         </div>
       </Route>
-      <Route path="/profile">
+      <Route path="/my_portfolio/profile">
         <div className="container-app">
           <Nav/>
           <Profile/>
         </div>
       </Route>
-      <Route path="/contact">
+      <Route path="/my_portfolio/contact">
         <div className="container-app">
           <Nav/>
           <Contact/>
         </div>
       </Route>
-      <Route path="/projects">
+      <Route path="/my_portfolio/projects">
         <div className="container-app">
           <Nav/>
           <Projects/>
         </div>
       </Route>
-      <Route path="/interests">
+      <Route path="/my_portfolio/interests">
         <div className="container-app">
           <Nav/>
           <Interests/>
