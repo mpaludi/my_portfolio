@@ -1,26 +1,107 @@
 @import "./variables.scss";
 
-.page-content input {
+
+.form-field label {
+    z-index: 1;
+    top: -4px;
+    margin-bottom: 0rem;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
     position: absolute;
-    display: block;
-    color: antiquewhite;
-    border-color: $bg-container-page;
-    background-color: $bg-container-page;
-    margin: 1rem 0rem 0rem 0rem;
-    width: 50%;
-    left: 100px;
-    &.text {
-        height: 9.375rem;
-    }
-    &.text::placeholder {
-        text-align: center;
-    }
+    left: 12%;
+    background-color: rgb(25, 28, 44);
+    transition: all .4s ease-out;
+    pointer-events: none;
+    font-size: .94rem;
 }
 
-.page-content p, .page-content a{
-    position: absolute;
+.form-field input {
+    box-sizing: border-box;
+    line-height: inherit;
+    overflow: visible;
+    padding-left: 2%;
+    vertical-align: middle;
+    font-size: 1.2rem;
+    border: 1px solid #2e344e;
+    height: 50px;
+    margin-top: 10px;
+    position: relative;
+    color: white;
+    background: transparent;
+    width: 80%;
+    left: 10%;
+}
+
+.send-message-form {
+    padding-top: 1rem;
+    display: block;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    font-size: 18px;
+    line-height: 1.8rem;
+    font-family: Nunito,sans-serif;
+    color: #a4acc4;
+    font-weight: 400;
+}
+
+.form-field {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    margin-top: 30px;
+}
+
+.form-field textarea {
+    color: white;
+    resize: vertical;
+    border: 1px solid #2e344e;
+    font-size: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    width: 80%;
+}
+
+
+.contact-form-message {
+    box-sizing: border-box;
+    line-height: inherit;
+    overflow: visible;
+    margin-top: 10px;
+    left: 10%;
+    display: block;
+    background-color: transparent;
+    position: relative;
     padding: 1rem 0rem 0rem 1rem;
-    justify-content: center;
-    font-style: italic;
     color: aliceblue;
+    height: 100px;
+}
+
+#error-message {
+    font-size:x-small;
+    color: red;
+    font-style: italic;
+    text-align: right;
+    margin: 0;
+    padding-right: 10%;
+}
+
+.button-send-field {
+    margin-left: 10%;
+    margin-right: 10%;
+    position: relative;
+    margin-top: 5%;
+    padding-bottom: 5%;
+    display: block;
+    right: 0;
+}
+
+.social-networks {
+    margin-left: 10%;
+    margin-right: 10%;
+    position: relative;
+    margin-top: 5.7rem;
+    padding-bottom: 5%;
+    display: block;
+    right: 0;
 }

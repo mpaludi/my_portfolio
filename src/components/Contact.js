@@ -1,46 +1,139 @@
-import React from 'react'
+import React, { useState } from 'react'
+import ig from '../images/social networks/ig.png'
+import wapp from '../images/social networks/wapp.png'
+import link from '../images/social networks/link.png'
+import emailjs, { send } from 'emailjs-com'
+import apikeys from "../services/apikeys"
+
 import '../css/Page.scss'
 import '../css/Button.scss'
 import '../css/Contact.scss'
 
 function Contact() {
 
+  const [emptyEmail, setEmptyemail] = useState("");
+  const [emptySubject, setEmptysubject] = useState("");
+  const [emptyMessage, setEmptymessage] = useState("");
+  const [message, setMessage] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [formSubmitSuccessful, setFormSubmitSuccessful] = useState(false);
+  const [incorrectEmail, setIncEmail] = useState("");
+
+  function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+
+  const handleMessage = (e) => {
+    setMessage(e.target.value)
+    setEmptymessage("");
+  }
+
+  const handleEmail = (e) => {
+    setEmail(e.target.value)
+    setEmptyemail("");
+    setIncEmail("");
+  }
+
+  const handleSubject = (e) => {
+    setSubject(e.target.value)
+    setEmptysubject("");
+  }
+
+  const sendMessage = (templateID, senderEmail, receiverEmail, message, user, subject) => {
+    emailjs.send('service_2xam9ga',templateID, 
+    {
+      senderEmail,
+      receiverEmail,
+      message,
+      subject,
+    },
+    user
+    ).then((res) => {
+      if(res.status === 200) {
+        setFormSubmitSuccessful(true)
+      }
+    })
+    .catch((err) => console.error('Failed to send message. Error: ', err))
+  }
+
+  const onSubmit = (e) => {
+    e.preventDefault()
+
+    if(email !== ""){
+      if(subject !== "") {
+        if(message !== "") {
+          if(validateEmail(email)) {
+            sendMessage(apikeys.TEMPLATE_ID, email, "mpaludi00@gmail.com", message, apikeys.USER_ID, subject)
+          } else {
+            setIncEmail(email +' '+ 'is not valid.')
+          }
+        } else {
+          setEmptymessage("This field is required");
+        }
+      } else {
+        setEmptysubject("This field is required");
+      }
+    } else {
+      setEmptyemail("This field is required");
+    }
+        
+  }
+
   return(
     <div className="page-container">
+
         <h2 class="contact" >Contact</h2>
-        <div className="page-content">
-          <a> E-mail: </a> <input placeholder="Insert your email"></input>
-          <br/>
-          <br/>
-          <br/>
-          <a> Subject: </a> <input placeholder="Insert your subject"></input>
-          <br/>
-          <br/>
-          <br/>
-          <a> Text: </a> <input placeholder="Insert text" class="text"></input>
-          <br/>
-          <br/>
-          <br/>
-          <button class='send'>Send</button>
+
+        <div className="page-content contact">
+          <form action='#' class="send-message-form" onSubmit={onSubmit}>
+            <div class='form-field'>
+              <label>Enter your e-mail* </label> 
+              <input name="email" onChange={handleEmail}></input>
+              <p id='error-message'>{(incorrectEmail !== "") ? incorrectEmail : emptyEmail}</p>
+              
+            </div>
+            <div class='form-field'>
+              <label>Enter your subject* </label> 
+              <input name="subject" onChange={handleSubject}></input>
+              <p id='error-message'>{emptySubject}</p>
+            </div>
+            <div class='form-field'>
+              <label for='conctact-form-message'>Enter your message* </label> 
+              <textarea name="message" class="contact-form-message" cols="45" rows="4"
+                onChange={handleMessage}
+              />
+              <p id='error-message'>{emptyMessage}</p>
+            </div>
+          </form>
+          <div class='button-send-field'>
+            <button class='send' onClick={onSubmit}>Send</button>
+          </div>
+
+
         </div>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <ul id='container-buttons'>
-          <li class='ig'>
-            <h4>Instagram</h4>
-          </li>
-          <li class='link'>
-            <h4>LinkedIn</h4>
-          </li>
-          <li class='wapp'>
-            <h4>WhatsApp</h4>
-          </li>
-          <li class='tw'>
-            <h4>Twitter</h4>
-          </li>
-        </ul>
+
+        <div class='social-networks'>
+          <ul id='container-buttons'>
+            <li class='ig'>
+              <a href="https://instagram.com/m.paludi">
+                <img src={ig}/>
+              </a>
+            </li>
+            <li class='link'>
+              <a href="https://www.linkedin.com/in/mpaludi00/">
+                <img src={link}/>
+              </a>
+            </li>
+            <li class='wapp'>
+              <a href="https://chatwith.io/s/6042bd6c999b8">
+                <img src={wapp}/>
+              </a>
+            </li>
+          </ul>
+        </div>
+
     </div>
   )
 }
