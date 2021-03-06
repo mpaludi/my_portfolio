@@ -8,7 +8,7 @@ function Nav() {
       <nav class="mi-header">
         <div class="mi-header-inner">
           <div class="mi-header-image">
-            <a href="">
+            <a href="/">
             <img alt="marian" src={me}/>
             </a>
           </div>
