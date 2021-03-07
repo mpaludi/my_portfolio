@@ -18,41 +18,43 @@
 }
 
 #container-buttons li {
-    opacity: 50%;
     text-align: center;
     display: list-item;
     color: black;
     width: 20vh;
-    background-color: rgb(164, 172, 196);
     margin: 1vh;
     padding: 1vh;
     border-radius: 5px;
     border: .5vh solid transparent;
-    transition: border-color .2s ease-in-out;
+    transition: all .4s ease-out;
+    background-color: transparent;
     -webkit-transition: border-color .2s ease-in-out;
     &.ig {
         cursor: pointer;
         width: 55px;
         border-radius: 100%;
-        background-color: $instagram;
         &:hover {
-            background-color: darken($instagram, 15);
+            transition: all .2s ease-out;
+            transform: translateY(-5px);
+            background-color: transparent;
         }
     }
     &.link {
         width: 55px;
         border-radius: 100%;
-        background-color: $linkedin;
         &:hover {
-            background-color: darken($linkedin, 15);
+            transition: all .2s ease-out;
+            transform: translateY(-5px);
+            background-color: transparent;
         }
     }
     &.wapp {
         width: 55px;
         border-radius: 100%;
-        background-color: $whatsapp;
         &:hover {
-            background-color: darken($whatsapp, 15);
+            transition: all .2s ease-out;
+            transform: translateY(-5px);
+            background-color: transparent;
         }
     }
 }

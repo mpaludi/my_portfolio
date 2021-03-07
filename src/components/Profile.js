@@ -9,14 +9,14 @@ function Profile() {
     if (language === "ES") {
       return(
         <p>
-          Estudiante de computacion, cursando el 4to año, con muchas ganas de insertarme en
-          el mundo laboral garantizando una gran capacidad para resolver problemas, y que ante
-          el uso de una nueva tecnologia una facil adaptación.
+          Estudiante de computación, cursando el cuarto año, 
+          con muchas ganas de insertarse en el mundo laboral 
+          garantizando una gran capacidad para resolver problemas, 
+          y una fácil adaptación ante cualquier tecnología.
           <br/> 
-          Me considero alguien muy sociable, por lo que me gusta trabajar
-          en equipo y ayudar al resto. Me gustan mucho los desafios
-          por lo que siempre estoy predispuesto ante nuevos problemas para
-          encararlos con gran entusiasmo. 
+          Sociable, por lo que me gusta trabajar en equipo y ayudar al resto. (Amo el metodo SCRUM)
+          Me gustan mucho los nuevos desafios
+          ya que son los que me impulsan a mejorar cada dia.
           <br/>
           Proactivo, y con muchas ganas de seguir aprendiendo. 
         </p>
@@ -24,16 +24,14 @@ function Profile() {
     } else {
       return(
         <p>
-          EN: Estudiante de computacion, cursando el 4to año, con muchas ganas de insertarme en
-          el mundo laboral garantizando una gran capacidad para resolver problemas, y que ante
-          el uso de una nueva tecnologia una facil adaptación.
+          Computer science student, in his fourth year, eager to enter the working world,
+          with a great ability to solve problems,
+          and an easy adaptation to any technology.
           <br/> 
-          Me considero alguien muy sociable, por lo que me gusta trabajar
-          en equipo y ayudar al resto. Me gustan demasiado los desafios
-          por lo que siempre estoy predispuesto ante nuevos problemas para
-          encararlos con gran entusiasmo. 
+          Sociable, so I like to work in a team and help others. (I love the SCRUM method)
+          I really like new challenges as they are the ones that drive me to improve every day.
           <br/>
-          Proactivo, y con muchas ganas de seguir aprendiendo. 
+          Proactive, and eager to keep learning.
         </p>
       )
     }
@@ -43,20 +41,10 @@ function Profile() {
     <div className="page-container">
         <h2 class="profile" >Profile</h2>
         <div className="page-content">
-          {text("ES")}
+          <div class="content-text">
+            {text("EN")}
+          </div>
         </div>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <ul id='container-buttons'>
-          <li>
-            <h4>Fortalezas</h4>
-          </li>
-          <li>
-            <h4>Debilidades</h4>
-          </li>
-        </ul>
     </div>
   )
 }
