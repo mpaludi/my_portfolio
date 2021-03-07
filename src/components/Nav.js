@@ -5,7 +5,11 @@ import me from '../images/me.jpg'
 function Nav() {
   return (
     <div class="container-nav">
-      <nav class="mi-header">
+        <input type="checkbox" id="show-nav"/>
+        <label for="show-nav" class="mi-header-toggler" id="open">
+            <a class="lni-menu"/>
+        </label>
+      <nav class="mi-header" id="nav">
         <div class="mi-header-inner">
           <div class="mi-header-image">
             <a href="/">

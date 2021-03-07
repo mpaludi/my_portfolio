@@ -5,6 +5,9 @@
     padding-left: 300px;
     margin-top: 15.54375rem;
     min-height: 100vh;
+    @media screen and (max-width: 600px) {
+        padding-left: 0;
+    }
 }
 
 #aboutme-intro {

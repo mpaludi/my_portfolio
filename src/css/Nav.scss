@@ -21,6 +21,72 @@ nav {
 
     @media screen and (max-width: 600px) {
         width: 0;
+    };
+
+    
+}
+
+.mi-header-toggler:not(:disabled) {
+    cursor: pointer;
+}
+
+.mi-header-toggler {
+    opacity: 80%;
+    appearance: auto;
+    font: 400 13.3333px Arial;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-rendering: auto;
+    color: #a4acc4;
+    text-indent: 0px;
+    text-shadow: none;
+    font: 400 13.3333px Arial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    position: fixed;
+    z-index: 150;
+    top: 0;
+    padding: 0;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    font-size: 1.6rem;
+    background: #191d2b;
+    border: 1px solid #2e344e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    @media only screen and (max-width: 600px) {
+        display: flex;
+    }
+}
+
+#show-nav {
+    display: none;
+    &:checked ~ nav{
+        width: 300px;
+    }
+}
+
+.lni-menu {
+    font-family: 'LineIcons' !important;
+    speak-as: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    color: #a4acc4;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    text-decoration: none;
+    &:before {
+        content: "≡";
     }
 }
 

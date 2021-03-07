@@ -28,7 +28,7 @@
     transition: border-color .2s ease-in-out;
     -webkit-transition: border-color .2s ease-in-out;
     &.ig {
-        width: 6vh;
+        width: 55px;
         border-radius: 100%;
         background-color: $instagram;
         &:hover {
@@ -36,7 +36,7 @@
         }
     }
     &.link {
-        width: 6vh;
+        width: 55px;
         border-radius: 100%;
         background-color: $linkedin;
         &:hover {
@@ -44,19 +44,11 @@
         }
     }
     &.wapp {
-        width: 6vh;
+        width: 55px;
         border-radius: 100%;
         background-color: $whatsapp;
         &:hover {
             background-color: darken($whatsapp, 15);
-        }
-    }
-    &.tw {
-        width: 6vh;
-        border-radius: 100%;
-        background-color: $twitter;
-        &:hover {
-            background-color: darken($twitter, 15);
         }
     }
 }

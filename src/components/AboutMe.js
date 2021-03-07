@@ -2,10 +2,14 @@ import React from 'react';
 import '../css/AboutMe.scss'
 import '../css/Button.scss'
 import { useMediaQuery } from "react-responsive";
+import '../css/Nav.scss';
+import me from '../images/me.jpg'
 
 function AboutMe() {
 
-  // const isPhone = useMediaQuery({query: `(max-width: 760px)`});
+  const isPhone = useMediaQuery({query: `(max-width: 760px)`});
+
+  const pe = ''
 
   const texts = {
     introES: "¡hola! yo soy",
@@ -25,8 +29,19 @@ function AboutMe() {
 }
 
   return(
+    <> 
       <div className="AboutMe">
         <div id='container'>
+          {
+            isPhone ? (
+              <div class="mi-header-image">
+                <a>
+                  <img alt="marian" src={me}/>
+                </a>
+              </div>
+              ) : (<div/>)
+          
+          }
           <p id='aboutme-intro'>
             <cite>
               {texts.introEN}
@@ -44,6 +59,7 @@ function AboutMe() {
           <br/>
         </div>
       </div>
+    </>
   )
 }
 
