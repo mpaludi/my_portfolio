@@ -7,9 +7,7 @@ import me from '../images/me.jpg'
 
 function AboutMe() {
 
-  const isPhone = useMediaQuery({query: `(max-width: 760px)`});
-
-  const pe = ''
+  const isPhone = useMediaQuery({query: `(max-width: 600px)`});
 
   const texts = {
     introES: "¡hola! yo soy",
@@ -45,7 +43,7 @@ function AboutMe() {
           <p id='aboutme-intro'>
             <cite>
               {texts.introEN}
-            </cite>
+            </cite>z
           </p>
           <p id='name'>
             <strong>Mariano Paludi</strong>
@@ -55,8 +53,9 @@ function AboutMe() {
               {texts.aboutmeEN}
             </cite>
           </p>
-          <br/>
-          <br/>
+          <div class='container-button'>
+            <button class="button-style check-profile" onClick={()=>{window.location.href = `${window.location.href}profile`}}>Check profile</button>
+          </div>
         </div>
       </div>
     </>

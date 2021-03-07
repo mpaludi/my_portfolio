@@ -113,7 +113,7 @@ function Contact() {
           </form>
 
           <div class='button-send-field'>
-            <button class='send' onClick={onSubmit}>Send</button>
+            <button class='button-style submit' onClick={onSubmit}>Send</button>
             <p id='status'> {sendingStatus}</p>
           </div>
 

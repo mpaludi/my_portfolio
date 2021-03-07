@@ -12,6 +12,9 @@
     flex-wrap: wrap;
     justify-content: center;
     
+    a {
+        text-decoration: none;
+    }
 }
 
 #container-buttons li {
@@ -28,6 +31,7 @@
     transition: border-color .2s ease-in-out;
     -webkit-transition: border-color .2s ease-in-out;
     &.ig {
+        cursor: pointer;
         width: 55px;
         border-radius: 100%;
         background-color: $instagram;
@@ -53,24 +57,56 @@
     }
 }
 
-.send {
+#get-cv {
+    margin-top: 5rem;
+}
+
+.button-style {
     position: relative;
     border-radius: 3%;
     padding: 0 30px;
-    background: #037fff;
     color: #fff;
-    border: 0;
     display: inline-block;
-    z-index: 1;
     text-transform: uppercase;
     font-size: .9rem;
     letter-spacing: 2px;
     height: 50px;
-    line-height: 50px;
+    line-height: normal;
     transition: all .4s ease-out;
-
+    cursor: pointer;
+    &.submit {
+        background: #037fff;
+        border: 2px solid #037fff;
+    }
+    &.get-cv {
+        background: #f9004d;
+        border: 2px solid #f9004d;
+    }
+    &.check-profile {
+        background: #25d366;
+        border: 2px solid #25d366;
+    }
+    &:hover {
+        background-color: transparent;
+        box-shadow: 0 10px 15px 0 rgb(0 0 0 / 10%);
+        transform: translateY(-5px);
+    }
+    &.submit:hover {
+        color: #037fff;
+    }
+    &.get-cv:hover {
+        color: #f9004d;
+    }
+    &.check-profile:hover {
+        color: #25d366;
+    }
 }
 
 #container-buttons li:hover {
     background-color: rgb(71, 103, 199);
+}
+
+.container-button {
+    margin-top: 10%;
+    text-align: center;
 }

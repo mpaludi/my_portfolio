@@ -14,7 +14,7 @@ function Profile() {
           el uso de una nueva tecnologia una facil adaptación.
           <br/> 
           Me considero alguien muy sociable, por lo que me gusta trabajar
-          en equipo y ayudar al resto. Me gustan demasiado los desafios
+          en equipo y ayudar al resto. Me gustan mucho los desafios
           por lo que siempre estoy predispuesto ante nuevos problemas para
           encararlos con gran entusiasmo. 
           <br/>
