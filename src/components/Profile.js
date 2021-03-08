@@ -2,6 +2,7 @@ import React from 'react'
 import '../css/Page.scss'
 import '../css/Button.scss'
 import '../css/Profile.scss'
+import Scrollspy from 'react-scrollspy'
 
 function Profile() {
 
@@ -43,9 +44,11 @@ function Profile() {
       <div class="section-container">
         <div class="nav-container">
           <nav class="nav-profile">
+          <Scrollspy class="nav-menu" items={['skills','experiences','education']} currentClassName="is-current">
             <a href="#skills">Skills</a>
             <a href="#experiences">Experiences</a>
             <a href="#education">Education</a>
+          </Scrollspy>
           </nav>
         </div>
         <section id="profile-home">

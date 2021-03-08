@@ -22,10 +22,26 @@ section {
 .nav-container {
     text-align: center;
     position: fixed;
-    z-index: 190;
+    z-index: 8;
     bottom: 0;
-    right: 10px;
-    left: 310px;
+    right: 210px;
+    left: 510px;
+
+    ul {
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+        padding-inline-start: 0px;
+    }
+
+    @media screen and (max-width: 1024px){ // Mobile L
+        right: 110px;
+        left: 410px;
+    }
+
+    @media screen and (max-width: 600px){ // Mobile L
+        right: 0;
+        left: 0;
+    }
 
     @media screen and (max-width: 425px){ // Mobile L
         right: 0;
@@ -37,13 +53,36 @@ section {
     border-radius: 6px;
     display: block;
     margin-bottom: 1rem;
-    z-index: 200;
-    padding: 1em 0;
-    background-color:#037fff;
+    background-color: darken($bg-container-page,3);
     a {
-        z-index: 220;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        z-index: 8;
+        display: inline-block;
+        font-weight: 500;
         text-decoration: none;
         color: aliceblue;
-        margin: 2rem;
+        padding: 20px 0;
+        position: relative;
+        &::after {
+            position: absolute;
+            content: "";
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #25d366;
+            transition: 0.3s;
+            bottom: 0;
+        }
+        &.is-current {
+            color: #25d366;
+            &::after {
+                width: 100%;
+            }
+        }
+        @media screen and (max-width: 320px){ // Mobile L
+            margin-left: 0.6rem;
+            margin-right: 0.6rem;
+        }
     }
 }
