@@ -1,6 +1,7 @@
 import React from 'react'
 import '../css/Page.scss'
 import '../css/Button.scss'
+import '../css/Profile.scss'
 
 function Profile() {
 
@@ -23,12 +24,12 @@ function Profile() {
       )
     } else {
       return(
-        <p>
+        <p class="text">
           Computer science student, in his fourth year, eager to enter the working world,
           with a great ability to solve problems,
           and an easy adaptation to any technology.
           <br/> 
-          Sociable, so I like to work in a team and help others. (I love the SCRUM method)
+          Sociable, so I like to work in a team and help others (I love the SCRUM method).
           I really like new challenges as they are the ones that drive me to improve every day.
           <br/>
           Proactive, and eager to keep learning.
@@ -39,12 +40,39 @@ function Profile() {
 
   return(
     <div className="page-container">
-        <h2 class="profile" >Profile</h2>
-        <div className="page-content">
-          <div class="content-text">
-            {text("EN")}
-          </div>
+      <div class="section-container">
+        <div class="nav-container">
+          <nav class="nav-profile">
+            <a href="#skills">Skills</a>
+            <a href="#experiences">Experiences</a>
+            <a href="#education">Education</a>
+          </nav>
         </div>
+        <section id="profile-home">
+          <h2 class="profile" >Profile</h2>
+          <div className="page-content">
+              {text("EN")}
+          </div>
+        </section>
+        <section id="skills">
+          <h2 class="skills">Main skills</h2>
+          <div className="page-content">
+              Skills ...
+          </div>
+        </section>
+        <section id="experiences">
+          <h2 class="experiences">Experiences</h2>
+          <div className="page-content">
+              Experiences ...
+          </div>
+        </section>
+        <section id="education">
+          <h2 class="experiences">Education</h2>
+          <div className="page-content">
+              Education ...
+          </div>
+        </section>
+      </div>
     </div>
   )
 }
