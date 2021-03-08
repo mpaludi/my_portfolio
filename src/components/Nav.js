@@ -14,7 +14,7 @@ function Nav() {
         <div class="mi-header-inner">
           <div class="mi-header-image">
             <a href="/">
-            <img alt="marian" src={me}/>
+            <img alt="marian" src={me} alt="designer"/>
             </a>
           </div>
           <ul class="mi-header-menu">
