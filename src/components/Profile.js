@@ -3,9 +3,10 @@ import '../css/Page.scss'
 import '../css/Button.scss'
 import '../css/Profile.scss'
 import Scrollspy from 'react-scrollspy'
+import { FiChevronUp } from "react-icons/fi"
+import ScrollToTop from 'react-scroll-up'
 
 function Profile() {
-
   
   function text(language){
     if (language === "ES") {
@@ -58,19 +59,25 @@ function Profile() {
           </div>
         </section>
         <section id="skills">
-          <h2 class="skills">Main skills</h2>
+          <div class="header-section">
+            <h2 class="skills">Main skills</h2>
+          </div>
           <div className="page-content">
               Skills ...
           </div>
         </section>
         <section id="experiences">
-          <h2 class="experiences">Experiences</h2>
+          <div class="header-section">
+            <h2 class="experiences">Experiences</h2>
+          </div>
           <div className="page-content">
               Experiences ...
           </div>
         </section>
         <section id="education">
-          <h2 class="experiences">Education</h2>
+          <div class="header-section">
+            <h2 class="education">Education</h2>
+          </div>
           <div className="page-content">
               Education ...
           </div>
@@ -81,3 +88,23 @@ function Profile() {
 }
 
 export default Profile;
+
+/*
+Auto scroll-up not found corretly
+
+const style = {
+    position: 'fixed',
+    bottom: 16,
+    right: 30,
+    cursor: 'pointer',
+    transitionDuration: '0.05s',
+    transitionTimingFunction: 'linear',
+    transitionDelay: '0s'
+  }
+
+<div className="backto-top">
+  <ScrollToTop style={style} showUnder={160} topPosition={10} duration={5}>
+    <FiChevronUp />
+  </ScrollToTop>
+</div>
+*/

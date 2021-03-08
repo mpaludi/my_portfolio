@@ -1,6 +1,7 @@
-import React from 'react';
-import '../css/Nav.scss';
+import React from 'react'
+import '../css/Nav.scss'
 import me from '../images/me.jpg'
+
 
 function Nav() {
   return (

@@ -10,9 +10,7 @@ function Resume() {
         <h2 class="resume" >Resume</h2>
         <div className="page-content">
           <p>
-          Desarollador de Software JR de 21 años, en busca 
-          de comenzar a adquirir experiencia 
-          y lograr profecionalizarse como Desarollador Full-Stack. 
+          21 year old JR Software Developer, looking to start gaining experience and become a professional Full-Stack Developer. 
           </p>
         </div>
         <div class="get-cv">

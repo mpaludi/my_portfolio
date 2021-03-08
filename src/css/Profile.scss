@@ -86,3 +86,33 @@ section {
         }
     }
 }
+
+.backto-top {
+    font-size: 2rem;
+    z-index: 2000;
+    display: block;
+    div {
+        bottom: 16px;
+        z-index: 999;
+        width: 50px;
+        height: 50px;
+        line-height: 49px;
+        border-radius: 50%;
+        background-color: rgb(0, 0, 0);
+        text-align: center;
+        overflow: hidden;
+        z-index: 999!important;
+        box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%), 0 3px 1px -2px rgb(0 0 0 / 20%);
+    }
+
+    svg {
+        font-size: 14px!important;
+        color: rgb(255, 255, 255);
+        width: 27px;
+        height: 27px;
+    }
+}
+
+.header-section {
+    padding-top: 5%;
+}
