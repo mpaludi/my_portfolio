@@ -16,6 +16,7 @@ import MysqlIcon from '../images/MysqlIcon.png'
 function Profile() {
 
   const [opacity, setOpacity] = useState('0')
+  const [selected_skill, setSelectedSkill] = useState("Technological")
 
   const style_backto_Top = {
     opacity: opacity,
@@ -58,6 +59,7 @@ function Profile() {
     },
   ]
 
+
   useEffect(() => {
     const handleScroll = () => {
       const { y } = first_section.current.getBoundingClientRect()
@@ -72,6 +74,7 @@ function Profile() {
 
   }, []);
 
+
   function nav(area, items) {
 
     return (
@@ -80,7 +83,7 @@ function Profile() {
           <Scrollspy class="nav-menu" items={items} currentClassName="is-current">
             {
               items.map((item) => (
-                <a href={`#${item}`}>{`${item}`}</a>
+                <a style={{'cursor':'pointer'}} onClick={() => {setSelectedSkill(item)}}>{item}</a>
               ))
             }
           </Scrollspy>
@@ -92,7 +95,7 @@ function Profile() {
   function skills(type) {
     
     switch (type) {
-      case "Technologies":
+      case "Technological":
         return (
           <ul class={type}>
           <h4 class='description-skill'>
@@ -112,13 +115,24 @@ function Profile() {
     
       case "Knowledge":
 
-        return (<div class={type}>
-            <a>Programacion funcional</a>
-            <a>Programacion imperativa</a>
-            <a>DOO</a>
-            <a>SCRUM</a>
-            <a>Ingenieria del software</a>
-          </div>);
+        return (
+          <ul class={type}>
+            <h4 class='description-skill'>
+            These are some of the concepts I have worked with, and consider of great importance.
+            </h4>
+            <li>
+              <h5>Programacion funcional</h5>
+            </li>
+            <li>
+              <h5>Programacion imperativa</h5>
+            </li>
+            <li>
+              <h5>Desarrollo front-end con react</h5>
+            </li>
+            <li>
+              <h5>Buenos diseños de arquitectura</h5>
+            </li>
+          </ul>);
 
       case "Strengths":
 
@@ -128,7 +142,7 @@ function Profile() {
           </div>);
 
       default:
-        return (<></>);
+        return (<div>Nada</div>);
     }
   }
   
@@ -182,7 +196,7 @@ function Profile() {
             nav("Skills", ['Technological', 'Knowledge', 'Strengths'])
           }
           <div className="page-content">
-              {skills("Technologies")}
+              {skills(selected_skill)}
           </div>
         </section>
         <section id="Experiences">
