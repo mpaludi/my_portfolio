@@ -4,6 +4,14 @@ import '../css/Button.scss'
 import '../css/Profile.scss'
 import Scrollspy from 'react-scrollspy'
 import { FiChevronUp } from "react-icons/fi"
+import GitIcon from '../images/GitIcon.png'
+import ReactIcon from '../images/ReactIcon.png'
+import CIcon from '../images/CIcon.png'
+import PythonIcon from '../images/PythonIcon.png'
+import HtmlIcon from '../images/HtmlIcon.png'
+import CssIcon from '../images/CssIcon.png'
+import JsIcon from '../images/JsIcon.png'
+import MysqlIcon from '../images/MysqlIcon.png'
 
 function Profile() {
 
@@ -14,6 +22,41 @@ function Profile() {
   }
 
   const first_section = useRef();
+
+  const techList = [
+    {
+      name: "Git",
+      img: GitIcon
+    },
+    {
+      name: "React",
+      img: ReactIcon
+    },
+    {
+      name: "C",
+      img: CIcon
+    },
+    {
+      name: "Javascript",
+      img: JsIcon
+    },
+    {
+      name: "Mysql",
+      img: MysqlIcon
+    },
+    {
+      name: "HTML5",
+      img: HtmlIcon
+    },
+    {
+      name: "Python",
+      img: PythonIcon
+    },
+    {
+      name: "CSS3",
+      img: CssIcon
+    },
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,20 +93,38 @@ function Profile() {
     
     switch (type) {
       case "Technologies":
-        return (<div>
-
-        </div>);
+        return (
+          <ul class={type}>
+          <h4 class='description-skill'>
+          These are some of the technological skills that I handle with great performance,
+          but I am always ready to incorporate new ones.
+          </h4>
+            {
+              techList.map(
+                (tech) => (
+                  <li>
+                    <h5>{tech.name}</h5>
+                    <img class='small' src={tech.img}/>
+                  </li>
+                ))
+            }
+          </ul>);
     
       case "Knowledge":
 
-        return (<div>
-
+        return (<div class={type}>
+            <a>Programacion funcional</a>
+            <a>Programacion imperativa</a>
+            <a>DOO</a>
+            <a>SCRUM</a>
+            <a>Ingenieria del software</a>
           </div>);
 
       case "Strengths":
 
-        return (<div>
-
+        return (<div class={type}>
+            <a>Front-End</a>
+            <a>Pepe</a>
           </div>);
 
       default:
@@ -107,7 +168,7 @@ function Profile() {
     <div className="page-container">
       <div class="section-container">
         {nav(undefined,['Skills', 'Experiences', 'Education'])}
-        <section id="profile-home">
+        <section id="profile-home" class='is-first'>
           <h2 class="profile" >Profile</h2>
           <div className="page-content">
               {text("EN")}
@@ -118,10 +179,10 @@ function Profile() {
             <h2 class="Skills">Main skills</h2>
           </div>
           {
-            nav("Skills", ['Technologies', 'Knowledge', 'Strengths'])
+            nav("Skills", ['Technological', 'Knowledge', 'Strengths'])
           }
           <div className="page-content">
-              Skills ...
+              {skills("Technologies")}
           </div>
         </section>
         <section id="Experiences">
@@ -132,7 +193,7 @@ function Profile() {
               Experiences ...
           </div>
         </section>
-        <section id="Education">
+        <section id="Education" class="is-last">
           <div class="header-section">
             <h2 class="Education">Education</h2>
           </div>
@@ -150,29 +211,10 @@ function Profile() {
 
 export default Profile;
 
+
 /*
-{
-              (area === undefined) ? (
-                items.map(
-                  (item, key) => (
-                    (key !== (length-1)) ? (
-                      <a href={`#${item}`}>{`${item}`}</a>
-                     ): (
-                      <>
-                        <a href={`#${item}`}>{`${item}`}</a>
-                        <a href="#profile-home" class="backto-top">
-                              <FiChevronUp/>
-                        </a>
-                      </>
-                     )
-                  )
-                )
-              )
-              :
-              items.map(
-                (item) => (
-                  <a href={`#${item}`}>{`${item}`}</a>
-                )
-              )
-            }
+<li>
+  <h3>{techList[0].name}</h3>
+  <img class='small' src={techList[0].img}/>
+</li>
 */
