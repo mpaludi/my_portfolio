@@ -49,11 +49,70 @@ section {
     }
 }
 
+.nav-container-skills {
+    text-align: center;
+
+    @media screen and (max-width: 1024px){ // Mobile L
+        right: 110px;
+        left: 410px;
+    }
+
+    @media screen and (max-width: 600px){ // Mobile L
+        right: 0;
+        left: 0;
+    }
+
+    @media screen and (max-width: 425px){ // Mobile L
+        right: 0;
+        left: 0;
+    }
+}
+
+
 .nav-profile {
     border-radius: 6px;
     display: block;
     margin-bottom: 1rem;
     background-color: darken($bg-container-page,3);
+
+    &.Skills {
+        font-size: 12px;
+        background-color: darken(#25d366,3);
+        margin-left: 10%;
+        margin-right: 10%;
+        a {
+            margin-left: 4rem;
+            margin-right: 4rem;
+            z-index: 8;
+            display: inline-block;
+            font-weight: 500;
+            text-decoration: none;
+            color: aliceblue;
+            padding: 20px 0;
+            position: relative;
+            &::after {
+                position: absolute;
+                content: "";
+                left: 0;
+                width: 0;
+                height: 3px;
+                background: #000201;
+                transition: 0.3s;
+                bottom: 0;
+            }
+            &.is-current {
+                color: #000000;
+                &::after {
+                    width: 100%;
+                }
+            }
+            @media screen and (max-width: 320px){ // Mobile L
+                margin-left: 0.6rem;
+                margin-right: 0.6rem;
+            }
+        }
+    }
+
     a {
         margin-left: 2rem;
         margin-right: 2rem;
@@ -88,24 +147,23 @@ section {
 }
 
 .backto-top {
+    right: 2rem;
+    position: fixed;
     font-size: 2rem;
     z-index: 2000;
-    display: block;
-    div {
-        bottom: 16px;
-        z-index: 999;
-        width: 50px;
-        height: 50px;
-        line-height: 49px;
-        border-radius: 50%;
-        background-color: rgb(0, 0, 0);
-        text-align: center;
-        overflow: hidden;
-        z-index: 999!important;
-        box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%), 0 3px 1px -2px rgb(0 0 0 / 20%);
-    }
+    display: flex;
+    bottom: 1rem;
+    width: 50px;
+    height: 50px;
+    line-height: 49px;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.5s;
 
     svg {
+        margin: 0.6999rem;
         font-size: 14px!important;
         color: rgb(255, 255, 255);
         width: 27px;

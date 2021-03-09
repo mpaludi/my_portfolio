@@ -1,12 +1,75 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import '../css/Page.scss'
 import '../css/Button.scss'
 import '../css/Profile.scss'
 import Scrollspy from 'react-scrollspy'
 import { FiChevronUp } from "react-icons/fi"
-import ScrollToTop from 'react-scroll-up'
 
 function Profile() {
+
+  const [opacity, setOpacity] = useState('0')
+
+  const style_backto_Top = {
+    opacity: opacity,
+  }
+
+  const first_section = useRef();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const { y } = first_section.current.getBoundingClientRect()
+      setOpacity((y<=0 ? '1' : '0'))
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+
+  }, []);
+
+  function nav(area, items) {
+
+    return (
+      <div class={`nav-container${(area !== undefined) ? ("-" + area) : ("")}`}>
+          <nav class={`nav-profile${(area !== undefined) ? (" " + area) : ("")}`}>
+          <Scrollspy class="nav-menu" items={items} currentClassName="is-current">
+            {
+              items.map((item) => (
+                <a href={`#${item}`}>{`${item}`}</a>
+              ))
+            }
+          </Scrollspy>
+          </nav>
+      </div>
+    )
+  }
+
+  function skills(type) {
+    
+    switch (type) {
+      case "Technologies":
+        return (<div>
+
+        </div>);
+    
+      case "Knowledge":
+
+        return (<div>
+
+          </div>);
+
+      case "Strengths":
+
+        return (<div>
+
+          </div>);
+
+      default:
+        return (<></>);
+    }
+  }
   
   function text(language){
     if (language === "ES") {
@@ -43,46 +106,44 @@ function Profile() {
   return(
     <div className="page-container">
       <div class="section-container">
-        <div class="nav-container">
-          <nav class="nav-profile">
-          <Scrollspy class="nav-menu" items={['skills','experiences','education']} currentClassName="is-current">
-            <a href="#skills">Skills</a>
-            <a href="#experiences">Experiences</a>
-            <a href="#education">Education</a>
-          </Scrollspy>
-          </nav>
-        </div>
+        {nav(undefined,['Skills', 'Experiences', 'Education'])}
         <section id="profile-home">
           <h2 class="profile" >Profile</h2>
           <div className="page-content">
               {text("EN")}
           </div>
         </section>
-        <section id="skills">
+        <section ref={first_section} id="Skills">
           <div class="header-section">
-            <h2 class="skills">Main skills</h2>
+            <h2 class="Skills">Main skills</h2>
           </div>
+          {
+            nav("Skills", ['Technologies', 'Knowledge', 'Strengths'])
+          }
           <div className="page-content">
               Skills ...
           </div>
         </section>
-        <section id="experiences">
+        <section id="Experiences">
           <div class="header-section">
-            <h2 class="experiences">Experiences</h2>
+            <h2 class="Experiences">Experiences</h2>
           </div>
           <div className="page-content">
               Experiences ...
           </div>
         </section>
-        <section id="education">
+        <section id="Education">
           <div class="header-section">
-            <h2 class="education">Education</h2>
+            <h2 class="Education">Education</h2>
           </div>
           <div className="page-content">
               Education ...
           </div>
         </section>
       </div>
+      <a style={style_backto_Top} href="#profile-home" class="backto-top">
+            <FiChevronUp/>
+      </a>
     </div>
   )
 }
@@ -90,21 +151,28 @@ function Profile() {
 export default Profile;
 
 /*
-Auto scroll-up not found corretly
-
-const style = {
-    position: 'fixed',
-    bottom: 16,
-    right: 30,
-    cursor: 'pointer',
-    transitionDuration: '0.05s',
-    transitionTimingFunction: 'linear',
-    transitionDelay: '0s'
-  }
-
-<div className="backto-top">
-  <ScrollToTop style={style} showUnder={160} topPosition={10} duration={5}>
-    <FiChevronUp />
-  </ScrollToTop>
-</div>
+{
+              (area === undefined) ? (
+                items.map(
+                  (item, key) => (
+                    (key !== (length-1)) ? (
+                      <a href={`#${item}`}>{`${item}`}</a>
+                     ): (
+                      <>
+                        <a href={`#${item}`}>{`${item}`}</a>
+                        <a href="#profile-home" class="backto-top">
+                              <FiChevronUp/>
+                        </a>
+                      </>
+                     )
+                  )
+                )
+              )
+              :
+              items.map(
+                (item) => (
+                  <a href={`#${item}`}>{`${item}`}</a>
+                )
+              )
+            }
 */

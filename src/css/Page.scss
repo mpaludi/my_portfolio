@@ -80,7 +80,7 @@
     &.resume::before {
         content: "RESUME";
     }
-    &.skills, &.experiences, &.skills, &.education {
+    &.Skills, &.Experiences, &.Education {
         font-size: 6rem;
 
         @media screen and (max-width: 1024px){ // Tablet
