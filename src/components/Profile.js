@@ -83,7 +83,7 @@ function Profile() {
           <Scrollspy class="nav-menu" items={items} currentClassName="is-current">
             {
               items.map((item) => (
-                <a style={{'cursor':'pointer'}} onClick={() => {setSelectedSkill(item)}}>{item}</a>
+                <a style={{'cursor':'pointer'}} href={`#${item}`} onClick={() => {setSelectedSkill(item)}}>{item}</a>
               ))
             }
           </Scrollspy>
