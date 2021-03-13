@@ -229,6 +229,7 @@ section {
 }
 
 ul {
+    width: 100%;
     margin-block-start: 0;
     margin-block-end: 0;
     margin-inline-start: 0;
@@ -245,7 +246,19 @@ ul {
     position: relative;
 
     &.technological {
-        line-height: 60px;
+
+        img {
+            -webkit-transition: all 0.5s ease-out;
+            -moz-transition: all 0.5s ease;
+            -ms-transition: all 0.5s ease;
+            &:hover {
+                -webkit-transform: rotate(-90deg);
+                -moz-transform: rotate(-90deg);
+                -ms-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+            }
+        }
+
         li {
             padding: 0 1rem 1rem 1rem;
             margin-right: 0.5rem;
@@ -257,7 +270,8 @@ ul {
         }
     }
 
-    &.knowledge {
+    &.knowledge, &.strengths {
+        display:inline-block;
         line-height: 60px;
         li {
     
@@ -266,9 +280,21 @@ ul {
             margin-left: 0.5rem;
     
             h5 {
+                text-align: left;
+                font-size:larger;
+                line-height: 30px;
                 margin: 0;
                 color: antiquewhite;
             }
+        }
+        p {
+            text-align: left;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-family: Nunito,sans-serif;
+            color: #a4acc4;
+            font-weight: 400;
+            font-size: 1rem;
         }
     }
 }
@@ -281,6 +307,7 @@ ul {
 }
 
 .description-skill {
+    width: 100%;
     text-align: center;
     border: 4px solid darken($title-color,20);
     font-style:initial;
@@ -293,5 +320,6 @@ ul {
     margin-inline-start: 0;
     margin-inline-end: 0;
     margin: 0;
+    margin-bottom:1.5rem;
     padding: 1rem;
 }

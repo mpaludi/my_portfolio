@@ -4,19 +4,11 @@ import '../css/Button.scss'
 import '../css/Profile.scss'
 import Scrollspy from 'react-scrollspy'
 import { FiChevronUp } from "react-icons/fi"
-import GitIcon from '../images/GitIcon.png'
-import ReactIcon from '../images/ReactIcon.png'
-import CIcon from '../images/CIcon.png'
-import PythonIcon from '../images/PythonIcon.png'
-import HtmlIcon from '../images/HtmlIcon.png'
-import CssIcon from '../images/CssIcon.png'
-import JsIcon from '../images/JsIcon.png'
-import MysqlIcon from '../images/MysqlIcon.png'
 import Skills from './Skills'
 
 function Profile() {
 
-  const [img_size, setImgSize] = useState({'width': '50px', 'height':'50px'})
+  const [img_size, setImgSize] = useState({'width':`${(0.15625 * window.screen.width) + "px"}`, 'height':`${(0.15625 * window.screen.width) + "px"}`})
 
   const [opacity, setOpacity] = useState('0');
   const [selected_skill, setSelectedSkill] = useState('');
@@ -27,41 +19,6 @@ function Profile() {
 
   const first_section = useRef();
 
-  const techList = [
-    {
-      name: "Git",
-      img: GitIcon
-    },
-    {
-      name: "React",
-      img: ReactIcon
-    },
-    {
-      name: "C",
-      img: CIcon
-    },
-    {
-      name: "Javascript",
-      img: JsIcon
-    },
-    {
-      name: "Mysql",
-      img: MysqlIcon
-    },
-    {
-      name: "HTML5",
-      img: HtmlIcon
-    },
-    {
-      name: "Python",
-      img: PythonIcon
-    },
-    {
-      name: "CSS3",
-      img: CssIcon
-    },
-  ]
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,8 +27,8 @@ function Profile() {
     }
 
     const handleResize = () => {
-      const {width} = window.screen
-      const x = (0.15625 * width) + "px";
+
+      const x = (0.15625 * window.screen.width) + "px";
       setImgSize({'width':`${x}`, 'height':`${x}`})
     }
 
@@ -171,7 +128,7 @@ function Profile() {
             nav('skills', ['technological', 'knowledge', 'strengths'])
           }
           <div className="page-content">
-              {Skills(selected_skill, techList, img_size)}
+              {Skills(selected_skill, img_size)}
           </div>
         </section>
         <section id="experiences">
