@@ -1,4 +1,5 @@
 @import '../css/variables.scss';
+@import '../settings.scss';
 
 html {
     scroll-behavior: smooth;
@@ -30,53 +31,46 @@ section {
 }
 
 .nav-container {
-    text-align: center;
-    position: fixed;
-    z-index: 8;
-    bottom: 0;
-    right: 210px;
-    left: 510px;
 
-    ul {
-        margin-block-start: 0em;
-        margin-block-end: 0em;
-        padding-inline-start: 0px;
+    &-main {
+        text-align: center;
+        position: fixed;
+        z-index: 8;
+        bottom: 0;
+        right: 210px;
+        left: 510px;
+        ul {
+            margin-block-start: 0em;
+            margin-block-end: 0em;
+            padding-inline-start: 0px;
+        }
     }
 
-    @media screen and (max-width: 1024px){ // Mobile L
-        right: 110px;
-        left: 410px;
+    &-skills {
+        z-index: 7;
+        opacity:unset;
+        text-align: center;
     }
 
-    @media screen and (max-width: 600px){ // Mobile L
-        right: 0;
-        left: 0;
+    &-main, &-skills {
+        @media screen and (max-width: 1024px){ // Mobile L
+            right: 110px;
+            left: 410px;
+        }
+    
+        @media screen and (max-width: 600px){ // Mobile L
+            right: 0;
+            left: 0;
+        }
+    
+        @media screen and (max-width: 425px){ // Mobile L
+            right: 0;
+            left: 0;
+        }
     }
-
-    @media screen and (max-width: 425px){ // Mobile L
-        right: 0;
-        left: 0;
-    }
+    
 }
 
-.nav-container-skills {
-    text-align: center;
-
-    @media screen and (max-width: 1024px){ // Mobile L
-        right: 110px;
-        left: 410px;
-    }
-
-    @media screen and (max-width: 600px){ // Mobile L
-        right: 0;
-        left: 0;
-    }
-
-    @media screen and (max-width: 425px){ // Mobile L
-        right: 0;
-        left: 0;
-    }
-}
 
 
 .nav-profile {
@@ -84,11 +78,51 @@ section {
     border-radius: 6px;
     display: block;
     margin-bottom: 1rem;
-    background-color: darken($bg-container-page,3);
 
-    &.Skills {
+    a {
+        user-select: none;
+    }
+
+    &.main {
+        background-color: darken($bg-container-page,3);
+        a {
+            text-transform: capitalize;
+            margin-left: 2rem;
+            margin-right: 2rem;
+            z-index: 8;
+            display: inline-block;
+            font-weight: 500;
+            text-decoration: none;
+            color: aliceblue;
+            padding: 20px 0;
+            position: relative;
+            &::after {
+                position: absolute;
+                content: "";
+                left: 0;
+                width: 0;
+                height: 3px;
+                background: #25d366;
+                transition: 0.3s;
+                bottom: 0;
+            }
+            &.is-current {
+                color: #25d366;
+                &::after {
+                    width: 100%;
+                }
+            }
+            @media screen and (max-width: 320px){ // Mobile L
+                margin-left: 0.6rem;
+                margin-right: 0.6rem;
+            }
+        }
+    }
+
+    &.skills {
+        text-transform: capitalize;
         font-size: 12px;
-        background-color: darken(#25d366,3);
+        background: darken(#25d366,3);
         margin-left: 10%;
         margin-right: 10%;
         a {
@@ -109,10 +143,10 @@ section {
                 height: 3px;
                 background: #000201;
                 transition: 0.3s;
-                bottom: 0;
+                bottom: 12px;
             }
             &.is-current {
-                color: #000000;
+                color: #000201;
                 &::after {
                     width: 100%;
                 }
@@ -121,38 +155,6 @@ section {
                 margin-left: 0.6rem;
                 margin-right: 0.6rem;
             }
-        }
-    }
-
-    a {
-        margin-left: 2rem;
-        margin-right: 2rem;
-        z-index: 8;
-        display: inline-block;
-        font-weight: 500;
-        text-decoration: none;
-        color: aliceblue;
-        padding: 20px 0;
-        position: relative;
-        &::after {
-            position: absolute;
-            content: "";
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: #25d366;
-            transition: 0.3s;
-            bottom: 0;
-        }
-        &.is-current {
-            color: #25d366;
-            &::after {
-                width: 100%;
-            }
-        }
-        @media screen and (max-width: 320px){ // Mobile L
-            margin-left: 0.6rem;
-            margin-right: 0.6rem;
         }
     }
 
@@ -202,8 +204,7 @@ section {
     padding-top: 5%;
 }
 
-.Technological {
-    transition: all 0.5s;
+ul {
     margin-block-start: 0;
     margin-block-end: 0;
     margin-inline-start: 0;
@@ -211,7 +212,6 @@ section {
     padding-inline-start: 0;
     height: auto;
     box-sizing: content-box;
-    line-height: 60px;
     text-align: center;
     display: flex;
     flex-wrap: wrap;
@@ -220,49 +220,36 @@ section {
     list-style: none;
     position: relative;
 
-    li {
+    &.technological {
+        line-height: 60px;
+        li {
+            padding: 0 1rem 1rem 1rem;
+            margin-right: 0.5rem;
+            margin-left: 0.5rem;
+            h5 {
+                margin: 0;
+                color: antiquewhite;
+            }
+        }
+    }
 
-        padding: 0 1rem 1rem 1rem;
-        margin-right: 0.5rem;
-        margin-left: 0.5rem;
-
-        h5 {
-            margin: 0;
-            color: antiquewhite;
+    &.knowledge {
+        line-height: 60px;
+        li {
+    
+            padding: 0 1rem 1rem 1rem;
+            margin-right: 0.5rem;
+            margin-left: 0.5rem;
+    
+            h5 {
+                margin: 0;
+                color: antiquewhite;
+            }
         }
     }
 }
 
-.Knowledge {
-    transition: all 0.5s;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-    padding-inline-start: 0;
-    height: auto;
-    box-sizing: content-box;
-    line-height: 60px;
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    list-style: none;
-    position: relative;
 
-    li {
-
-        padding: 0 1rem 1rem 1rem;
-        margin-right: 0.5rem;
-        margin-left: 0.5rem;
-
-        h5 {
-            margin: 0;
-            color: antiquewhite;
-        }
-    }
-}
 
 img {
     &.small {
@@ -271,8 +258,15 @@ img {
     }
 }
 
+.loader-skills {
+    background: transparent;
+    text-align: center;
+    width: 100%;
+    padding-top: 100px;
+}
+
 .description-skill {
-    
+    text-align: center;
     border: 4px solid darken($title-color,20);
     font-style:initial;
     box-sizing: border-box;

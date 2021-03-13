@@ -14,7 +14,7 @@ function Resume() {
           </p>
         </div>
         <div class="get-cv">
-          <button class="button-style get-cv" onClick={() => {window.location.href = "https://drive.google.com/file/d/1TPmCNO73v9L4xgVnyqG5alLQe6DVYC-6/view?usp=sharing"}}>
+          <button class="button-style get-cv" onClick={() => {window.location.href = "https://drive.google.com/file/d/1HBrgH2phYVpgcXlZtRy7HXt3WOvPYSWX/view?usp=sharing"}}>
           Get CV
           </button>
         </div>

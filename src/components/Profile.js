@@ -12,15 +12,17 @@ import HtmlIcon from '../images/HtmlIcon.png'
 import CssIcon from '../images/CssIcon.png'
 import JsIcon from '../images/JsIcon.png'
 import MysqlIcon from '../images/MysqlIcon.png'
+import { css } from "@emotion/core";
+import PropagateLoader from "react-spinners/PropagateLoader";
 
 function Profile() {
 
-  const [opacity, setOpacity] = useState('0')
-  const [selected_skill, setSelectedSkill] = useState("Technological")
+  const [opacity, setOpacity] = useState('0');
+  const [selected_skill, setSelectedSkill] = useState('');
 
   const style_backto_Top = {
     opacity: opacity,
-  }
+  };
 
   const first_section = useRef();
 
@@ -74,19 +76,37 @@ function Profile() {
 
   }, []);
 
-
   function nav(area, items) {
 
     return (
       <div class={`nav-container${(area !== undefined) ? ("-" + area) : ("")}`}>
           <nav class={`nav-profile${(area !== undefined) ? (" " + area) : ("")}`}>
-          <Scrollspy class="nav-menu" items={items} currentClassName="is-current">
-            {
-              items.map((item) => (
-                <a style={{'cursor':'pointer'}} href={`#${item}`} onClick={() => {setSelectedSkill(item)}}>{item}</a>
-              ))
-            }
-          </Scrollspy>
+          { (area !== "main") ? (
+            <Scrollspy class="nav-menu" items={items}>
+              {
+                items.map((item, i) => (
+                  <a style={{'cursor':'pointer'}} class={selected_skill === item ? "is-current" : ""}
+                  onClick={() => {setSelectedSkill(item)}}>
+                    {item}
+                  </a>
+                ))
+              }
+            </Scrollspy>
+            )
+            :
+            (
+              <Scrollspy class="nav-menu" items={items} currentClassName="is-current">
+              {
+                items.map((item) => (
+                  <a style={{'cursor':'pointer'}} href={`#${item}`}>
+                    {item}
+                  </a>
+                ))
+              }
+            </Scrollspy>
+            )
+
+          }
           </nav>
       </div>
     )
@@ -95,7 +115,7 @@ function Profile() {
   function skills(type) {
     
     switch (type) {
-      case "Technological":
+      case "technological":
         return (
           <ul class={type}>
           <h4 class='description-skill'>
@@ -113,7 +133,7 @@ function Profile() {
             }
           </ul>);
     
-      case "Knowledge":
+      case "knowledge":
 
         return (
           <ul class={type}>
@@ -134,7 +154,7 @@ function Profile() {
             </li>
           </ul>);
 
-      case "Strengths":
+      case "strengths":
 
         return (<div class={type}>
             <a>Front-End</a>
@@ -142,7 +162,14 @@ function Profile() {
           </div>);
 
       default:
-        return (<div>Nada</div>);
+        return (<>
+        <h4 class='description-skill'>
+          Please select a skill class and get to know my skills. 
+        </h4>
+        <div class='loader-skills'>
+         <PropagateLoader color="#25d366" size={30}/>
+        </div>
+        </>);
     }
   }
   
@@ -181,35 +208,35 @@ function Profile() {
   return(
     <div className="page-container">
       <div class="section-container">
-        {nav(undefined,['Skills', 'Experiences', 'Education'])}
+        {nav('main',['skills', 'experiences', 'education'])}
         <section id="profile-home" class='is-first'>
           <h2 class="profile" >Profile</h2>
           <div className="page-content">
               {text("EN")}
           </div>
         </section>
-        <section ref={first_section} id="Skills">
+        <section ref={first_section} id="skills">
           <div class="header-section">
-            <h2 class="Skills">Main skills</h2>
+            <h2 class="skills">Main skills</h2>
           </div>
           {
-            nav("Skills", ['Technological', 'Knowledge', 'Strengths'])
+            nav('skills', ['technological', 'knowledge', 'strengths'])
           }
           <div className="page-content">
               {skills(selected_skill)}
           </div>
         </section>
-        <section id="Experiences">
+        <section id="experiences">
           <div class="header-section">
-            <h2 class="Experiences">Experiences</h2>
+            <h2 class="experiences">Experiences</h2>
           </div>
           <div className="page-content">
               Experiences ...
           </div>
         </section>
-        <section id="Education" class="is-last">
+        <section id="education" class="is-last">
           <div class="header-section">
-            <h2 class="Education">Education</h2>
+            <h2 class="education">Education</h2>
           </div>
           <div className="page-content">
               Education ...
@@ -217,7 +244,7 @@ function Profile() {
         </section>
       </div>
       <a style={style_backto_Top} href="#profile-home" class="backto-top">
-            <FiChevronUp/>
+        <FiChevronUp/>
       </a>
     </div>
   )
