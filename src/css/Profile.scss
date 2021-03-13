@@ -122,35 +122,59 @@ section {
     &.skills {
         text-transform: capitalize;
         font-size: 12px;
-        background: darken(#25d366,3);
+        background: darken($linkedin,3);
         margin-left: 10%;
         margin-right: 10%;
-        a {
-            margin-left: 4rem;
-            margin-right: 4rem;
-            z-index: 8;
-            display: inline-block;
-            font-weight: 500;
-            text-decoration: none;
-            color: aliceblue;
-            padding: 20px 0;
+
+        li {
+            text-align: center;
+            display: block;
+            list-style: none;   
+        }
+
+        a { 
+            padding: 20px 0px;
+            text-transform: uppercase;
+            margin: 1.2rem;
+            font-size: 0.94rem;
+            letter-spacing: 1px;
+            display: block;
+            color: rgb(164, 172, 196);
+            font-weight: 600;
             position: relative;
-            &::after {
-                position: absolute;
+            border-bottom-width: 4px;
+            box-shadow: 0 0 0 0 1px rgba(#fff, .15) inset;
+            transition: all 0.4s ease-out 0s;
+            overflow: hidden;
+            text-shadow: 0 -1px 1px rgba(#000, .5);
+            text-decoration: none;
+            box-sizing: border-box; 
+            &:before {
                 content: "";
-                left: 0;
+                display: block;
                 width: 0;
+                left: 50%;
+                position: absolute;
+                background-color: rgb(164, 172, 196);
+                bottom: 0;
+                transition: all .7s;
                 height: 3px;
-                background: #000201;
-                transition: 0.3s;
-                bottom: 12px;
             }
+            
+            &:hover::before{
+            width: 100%;
+            left: 0;
+            }
+
             &.is-current {
-                color: #000201;
-                &::after {
-                    width: 100%;
-                }
+                color: darken($linkedin, 20);
+               &::before {
+                background-color: darken($linkedin, 20);
+                width: 100%;
+                left: 0;
+               }
             }
+
             @media screen and (max-width: 320px){ // Mobile L
                 margin-left: 0.6rem;
                 margin-right: 0.6rem;
@@ -249,20 +273,11 @@ ul {
     }
 }
 
-
-
-img {
-    &.small {
-        height: 50px;
-        width: 50px;
-    }
-}
-
 .loader-skills {
     background: transparent;
     text-align: center;
     width: 100%;
-    padding-top: 100px;
+    padding-top: 110px;
 }
 
 .description-skill {

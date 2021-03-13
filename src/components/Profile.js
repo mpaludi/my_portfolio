@@ -12,10 +12,11 @@ import HtmlIcon from '../images/HtmlIcon.png'
 import CssIcon from '../images/CssIcon.png'
 import JsIcon from '../images/JsIcon.png'
 import MysqlIcon from '../images/MysqlIcon.png'
-import { css } from "@emotion/core";
-import PropagateLoader from "react-spinners/PropagateLoader";
+import Skills from './Skills'
 
 function Profile() {
+
+  const [img_size, setImgSize] = useState({'width': '50px', 'height':'50px'})
 
   const [opacity, setOpacity] = useState('0');
   const [selected_skill, setSelectedSkill] = useState('');
@@ -68,10 +69,18 @@ function Profile() {
       setOpacity((y<=0 ? '1' : '0'))
     }
 
+    const handleResize = () => {
+      const {width} = window.screen
+      const x = (0.15625 * width) + "px";
+      setImgSize({'width':`${x}`, 'height':`${x}`})
+    }
+
     window.addEventListener('scroll', handleScroll)
+    window.addEventListener('resize', handleResize)
 
     return () => {
       window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleResize)
     }
 
   }, []);
@@ -110,67 +119,6 @@ function Profile() {
           </nav>
       </div>
     )
-  }
-
-  function skills(type) {
-    
-    switch (type) {
-      case "technological":
-        return (
-          <ul class={type}>
-          <h4 class='description-skill'>
-          These are some of the technological skills that I handle with great performance,
-          but I am always ready to incorporate new ones.
-          </h4>
-            {
-              techList.map(
-                (tech) => (
-                  <li>
-                    <h5>{tech.name}</h5>
-                    <img class='small' src={tech.img}/>
-                  </li>
-                ))
-            }
-          </ul>);
-    
-      case "knowledge":
-
-        return (
-          <ul class={type}>
-            <h4 class='description-skill'>
-            These are some of the concepts I have worked with, and consider of great importance.
-            </h4>
-            <li>
-              <h5>Programacion funcional</h5>
-            </li>
-            <li>
-              <h5>Programacion imperativa</h5>
-            </li>
-            <li>
-              <h5>Desarrollo front-end con react</h5>
-            </li>
-            <li>
-              <h5>Buenos diseños de arquitectura</h5>
-            </li>
-          </ul>);
-
-      case "strengths":
-
-        return (<div class={type}>
-            <a>Front-End</a>
-            <a>Pepe</a>
-          </div>);
-
-      default:
-        return (<>
-        <h4 class='description-skill'>
-          Please select a skill class and get to know my skills. 
-        </h4>
-        <div class='loader-skills'>
-         <PropagateLoader color="#25d366" size={30}/>
-        </div>
-        </>);
-    }
   }
   
   function text(language){
@@ -223,7 +171,7 @@ function Profile() {
             nav('skills', ['technological', 'knowledge', 'strengths'])
           }
           <div className="page-content">
-              {skills(selected_skill)}
+              {Skills(selected_skill, techList, img_size)}
           </div>
         </section>
         <section id="experiences">
@@ -251,11 +199,3 @@ function Profile() {
 }
 
 export default Profile;
-
-
-/*
-<li>
-  <h3>{techList[0].name}</h3>
-  <img class='small' src={techList[0].img}/>
-</li>
-*/

@@ -18,14 +18,14 @@ $fz-body: 18px;
 $padding-nav: 18.75rem;
 
 // Layouts
-$layout-dektop: "only screen and (min-width: 1920px)";
-$layout-desktop-xs: "only screen and (min-width: 1600px) and (max-width: 1919px)";
-$layout-laptop: "only screen and (min-width: 1200px) and (max-width: 1599px)";
-$layout-notebook: "only screen and (min-width: 992px) and (max-width: 1199px)";
-$layout-tablet: "(min-width: 768px)";
-$layout-mobile-lg: "only screen and (max-width: 767px)";
-$layout-mobile-sm: "only screen and (max-width: 575px)";
-$layout-mobile-xs: "only screen and (max-width: 480px)";
+$layout-dektop: 1920;
+$layout-desktop-xs: (1600 , 1919);
+$layout-laptop: (1200 , 1599);
+$layout-notebook: (992 , 1199);
+$layout-tablet: 768;
+$layout-mobile-lg: 767;
+$layout-mobile-sm: 575;
+$layout-mobile-xs: 480;
 
 // Social Colors
 $facebook: #3b5999;
@@ -85,3 +85,15 @@ $medium: #02b875;
 $vine: #00b489;
 $slack: #3aaf85;
 $snapchat: #fffc00;
+
+
+/*
+$layout-dektop: "only screen and (min-width: 1920px)";
+$layout-desktop-xs: "only screen and (min-width: 1600px) and (max-width: 1919px)";
+$layout-laptop: "only screen and (min-width: 1200px) and (max-width: 1599px)";
+$layout-notebook: "only screen and (min-width: 992px) and (max-width: 1199px)";
+$layout-tablet: "(min-width: 768px)";
+$layout-mobile-lg: "only screen and (max-width: 767px)";
+$layout-mobile-sm: "only screen and (max-width: 575px)";
+$layout-mobile-xs: "only screen and (max-width: 480px)";
+*/
