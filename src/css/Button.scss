@@ -29,26 +29,8 @@
     transition: all .4s ease-out;
     background-color: transparent;
     -webkit-transition: border-color .2s ease-in-out;
-    &.ig {
+    &.social-network {
         cursor: pointer;
-        width: 55px;
-        border-radius: 100%;
-        &:hover {
-            transition: all .2s ease-out;
-            transform: translateY(-5px);
-            background-color: transparent;
-        }
-    }
-    &.link {
-        width: 55px;
-        border-radius: 100%;
-        &:hover {
-            transition: all .2s ease-out;
-            transform: translateY(-5px);
-            background-color: transparent;
-        }
-    }
-    &.wapp {
         width: 55px;
         border-radius: 100%;
         &:hover {

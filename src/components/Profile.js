@@ -10,11 +10,11 @@ function Profile() {
 
   const [img_size, setImgSize] = useState({'width':`${(0.15625 * window.screen.width) + "px"}`, 'height':`${(0.15625 * window.screen.width) + "px"}`})
 
-  const [opacity, setOpacity] = useState('0');
+  const [display, setOpacity] = useState('0');
   const [selected_skill, setSelectedSkill] = useState('');
 
   const style_backto_Top = {
-    opacity: opacity,
+    display: 'none',
   };
 
   const first_section = useRef();

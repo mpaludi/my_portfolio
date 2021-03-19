@@ -84,6 +84,7 @@ section {
     }
 
     &.main {
+
         background-color: darken($bg-container-page,3);
         a {
             text-transform: capitalize;
@@ -103,7 +104,7 @@ section {
                 width: 0;
                 height: 3px;
                 background: #25d366;
-                transition: 0.3s;
+                transition: .3s;
                 bottom: 0;
             }
             &.is-current {
@@ -117,6 +118,7 @@ section {
                 margin-right: 0.6rem;
             }
         }
+
     }
 
     &.skills {
@@ -303,7 +305,7 @@ ul {
     background: transparent;
     text-align: center;
     width: 100%;
-    padding-top: 110px;
+    padding-top: 10%;
 }
 
 .description-skill {

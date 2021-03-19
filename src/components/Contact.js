@@ -3,6 +3,7 @@ import ig from '../images/social networks/ig.png'
 import wapp from '../images/social networks/wapp.png'
 import link from '../images/social networks/link.png'
 import emailjs from 'emailjs-com'
+import github from '../images/social networks/github.png'
 import apikeys from "../services/apikeys"
 
 import '../css/Page.scss'
@@ -10,6 +11,27 @@ import '../css/Button.scss'
 import '../css/Contact.scss'
 
 function Contact() {
+
+  const icon_style = {'width': '50px', 'heigth': '50px'};
+
+  const social_networks_list = [
+    {
+      img: ig,
+      href: 'https://instagram.com/mariano._paludi'
+    },
+    {
+      img: wapp,
+      href: 'https://chatwith.io/s/6042bd6c999b8'
+    },
+    {
+      img: link,
+      href: 'https://www.linkedin.com/in/mpaludi00/'
+    },
+    {
+      img: github,
+      href: 'https://github.com/Marian00P'
+    },
+  ]
 
   const [sendingStatus, setSendingstatus] = useState("");
   const [emptyEmail, setEmptyemail] = useState("");
@@ -85,6 +107,26 @@ function Contact() {
         
   }
 
+  const social_networks = () => {
+    return (
+      <div class='social-networks'>
+          <ul id='container-buttons'> 
+          {
+            social_networks_list.map(
+              (sc) => (
+                <li class='social-network'>
+                  <a href={sc.href}>
+                    <img style={icon_style} src={sc.img}/>
+                  </a>
+                </li>
+              )
+            )
+          }
+          </ul>
+      </div>
+    )
+  }
+
   return(
     <div className="page-container">
 
@@ -120,25 +162,7 @@ function Contact() {
 
         </div>
 
-        <div class='social-networks'>
-          <ul id='container-buttons'>
-            <li class='ig'>
-              <a href="https://instagram.com/m.paludi">
-                <img src={ig}/>
-              </a>
-            </li>
-            <li class='link'>
-              <a href="https://www.linkedin.com/in/mpaludi00/">
-                <img src={link}/>
-              </a>
-            </li>
-            <li class='wapp'>
-              <a href="https://chatwith.io/s/6042bd6c999b8">
-                <img src={wapp}/>
-              </a>
-            </li>
-          </ul>
-        </div>
+        {social_networks()}
 
     </div>
   )
