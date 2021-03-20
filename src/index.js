@@ -6,7 +6,6 @@ import Profile from './components/Profile';
 import AboutMe from './components/AboutMe';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
-import Interests from './components/Interests';
 import Nav from './components/Nav';
 import reportWebVitals from './reportWebVitals';
 import Resume from './components/Resume';
@@ -36,12 +35,6 @@ ReactDOM.render(
           <div className="container-app">
             <Nav/>
             <Projects/>
-          </div>
-        </Route>
-        <Route path="/interests">
-          <div className="container-app">
-            <Nav/>
-            <Interests/>
           </div>
         </Route>
         <Route path="/" >

@@ -245,7 +245,6 @@ ul {
     flex-direction: row;
     justify-content: center;
     list-style: none;
-    position: relative;
 
     &.technological {
 
@@ -272,21 +271,55 @@ ul {
         }
     }
 
-    &.knowledge, &.strengths {
-        display:inline-block;
+    &.knowledge, &.strengths, &.experiences, &.educations {
+        display:block;
         line-height: 60px;
+
         li {
-    
             padding: 0 1rem 1rem 1rem;
             margin-right: 0.5rem;
             margin-left: 0.5rem;
-    
+            vertical-align: baseline;
+
             h5 {
                 text-align: left;
                 font-size:larger;
                 line-height: 30px;
                 margin: 0;
                 color: antiquewhite;
+            }
+
+            h6 {
+                padding-left: 10px;
+                text-align: left;
+                font-size: 16px;
+                line-height: 16px;
+                margin: 0;
+                color: rgb(170, 159, 144);
+            }
+            
+            .container-logo {
+                float: left;
+                padding-left: 1rem;
+                width: 56px;
+                height: 56px;
+                display: inline-block;
+            }
+            
+            .container-edu{
+                float: left;
+                position: absolute;
+                margin-left: 8.25rem;
+                display: block;
+            }
+
+            .intra-li {
+                margin-bottom: 5rem;
+                float: left;
+                width: 100%!important;
+                display: flex!important;
+                flex-direction: column!important;
+                align-items: flex-start;
             }
         }
         p {
@@ -297,7 +330,13 @@ ul {
             color: #a4acc4;
             font-weight: 400;
             font-size: 1rem;
+
+            &#duration {
+                margin-left: 1rem;
+                padding: 0;
+            }
         }
+
     }
 }
 
@@ -324,4 +363,21 @@ ul {
     margin: 0;
     margin-bottom:1.5rem;
     padding: 1rem;
+}
+
+.container-list {
+    padding-top: 2rem;
+    width: auto;
+    height: auto;
+}
+
+.intra-li {
+    margin-bottom: 5rem;
+    float: left;
+    justify-content: space-between!important;
+    width: 100%!important;
+    display: flex!important;
+    flex-direction: column!important;
+    vertical-align: baseline;
+    align-items: flex-start;
 }

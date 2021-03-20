@@ -43,7 +43,7 @@ function AboutMe() {
           <p id='aboutme-intro'>
             <cite>
               {texts.introEN}
-            </cite>z
+            </cite>
           </p>
           <p id='name'>
             <strong>Mariano Paludi</strong>

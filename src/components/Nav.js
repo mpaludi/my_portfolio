@@ -25,8 +25,6 @@ function Nav() {
             <li><a href="/projects">
               <span>Projects</span></a>
             </li>
-            <li><a href="/interests"><span>Interests</span></a>
-            </li>
             <li><a href="/contact"><span>Contact</span></a>
             </li>
           </ul>
