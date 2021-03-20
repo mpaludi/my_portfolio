@@ -100,7 +100,7 @@ function Skills(type, img_style) {
   switch (type) {
     case "technological":
       return (
-        <ul class={type}>
+        <ul class={"in-section " + type}>
         <h4 class='description-skill'>
         These are some of the technological skills that I handle with great performance,
         but I am always ready to incorporate new ones.
@@ -124,7 +124,7 @@ function Skills(type, img_style) {
     case "knowledge":
 
       return (
-        <ul class={type}>
+        <ul class={"in-section " + type}>
           <h4 class='description-skill'>
           These are some of the concepts I have worked with, and consider of great importance.
           </h4>
@@ -143,7 +143,7 @@ function Skills(type, img_style) {
     case "strengths":
 
       return (
-        <ul class={type}>
+        <ul class={"in-section " + type}>
           <h4 class='description-skill'>
           These are some of my strengths in the workspace.
           </h4>

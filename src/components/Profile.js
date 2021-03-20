@@ -9,12 +9,12 @@ import unc from '../images/unc2.png'
 
 function Profile() {
 
-  const [img_size, setImgSize] = useState({'width':`${(0.15625 * window.screen.width) + "px"}`, 'height':`${(0.15625 * window.screen.width) + "px"}`})
+  const size = ((0.15625 * window.innerWidth) > 100 ? 100 : 0.15625 * window.innerWidth)
+  const [img_size, setImgSize] = useState({'width':`${size + "px"}`, 'height':`${size + "px"}`})
   const [display, setDisplay] = useState('none');
   const [opacity, setOpacity] = useState('0');
   const [selected_skill, setSelectedSkill] = useState('');
 
-  const style_institutelogo = {'width':'56px', 'height':'56px'}
   const first_section = useRef();
 
   const style_backto_Top = {
@@ -56,8 +56,8 @@ function Profile() {
     }
 
     const handleResize = () => {
-
-      const x = (0.15625 * window.screen.width) + "px";
+      const size = ((0.15625 * window.innerWidth) > 100 ? 100 : 0.15625 * window.innerWidth)
+      const x = (size) + "px";
       setImgSize({'width':`${x}`, 'height':`${x}`})
     }
 
@@ -77,7 +77,7 @@ function Profile() {
       <div class={`nav-container${(area !== undefined) ? ("-" + area) : ("")}`}>
           <nav class={`nav-profile${(area !== undefined) ? (" " + area) : ("")}`}>
           { (area !== "main") ? (
-            <Scrollspy class="nav-menu" items={items}>
+            <Scrollspy className="in-section" items={items}>
               {
                 items.map((item, i) => (
                   <a style={{'cursor':'pointer'}} class={selected_skill === item ? "is-current" : ""}
@@ -90,7 +90,7 @@ function Profile() {
             )
             :
             (
-              <Scrollspy class="nav-menu" items={items} currentClassName="is-current">
+              <Scrollspy className="in-section" items={items} currentClassName="is-current">
               {
                 items.map((item) => (
                   <a style={{'cursor':'pointer'}} href={`#${item}`}>
@@ -142,7 +142,7 @@ function Profile() {
   const list_experiences = () => {
     return (
       <div class='container-list'>
-        <ul class='experiences'>
+        <ul class='in-section experiences'>
             {
               experiences_list.map(
                 (exp) => (
@@ -161,14 +161,14 @@ function Profile() {
   const list_education = () => {
     return (
       <div class='container-list'>
-        <ul class='educations'>
+        <ul class='in-section educations'>
             {
               education_list.map(
                 (edu) => (
                   <li>
                     <div class='intra-li'>
                       <div class='container-logo'>
-                        <img src={unc}/>
+                        <img style={img_size} src={unc}/>
                       </div>
                       <div class='container-edu'>
                         <h5>{edu.title}</h5>

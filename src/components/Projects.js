@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../css/Page.scss'
 import '../css/Button.scss'
+import '../css/Project.scss'
 import sv from '../images/sv.png'
 import pf from '../images/portfolio.png'
 
 function Projects() {
+
+  const [img_size, setImgSize] = useState({'width':`${(0.15625 * window.innerWidth) + "px"}`, 'height':`${(0.15625 * window.screen.width) + "px"}`})
 
   const project_list = [
     {
@@ -21,19 +24,35 @@ function Projects() {
     },
   ]
 
+  useEffect(() => {
+
+    const handleResize = () => {
+
+      const x = (0.15625 * window.innerWidth) + "px";
+      setImgSize({'width':`${x}`, 'height':`${x}`})
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+
+  }, []);
+
   const list_projects = () => {
     return(
-      <div class='container-list'>
-        <ul class='educations'>
+      <div>
+        <ul class='project-list'>
             {
               project_list.map(
                 (proj) => (
                   <li>
-                    <div class='intra-li'>
-                      <div class='container-logo'>
-                        <img style={{'width':'100px', 'heigth':'100px'}} src={proj.img}/>
+                    <div class='container-project'>
+                      <div>
+                        <img style={img_size} src={proj.img}/>
                       </div>
-                      <div class='container-edu'>
+                      <div class='info-container'>
                         <h5>{proj.name}</h5>
                         <p>{proj.desc}</p>
                         <a id='duration' href={proj.link}>See project here!</a>
@@ -49,10 +68,10 @@ function Projects() {
 
   return(
       <div className="page-container">
-              <h2 class="projects" >Projects</h2>
-              <div className="page-content">
-                {list_projects()}
-              </div>
+        <h2 class="projects" >Projects</h2>
+        <div className="page-content">
+          {list_projects()}
+        </div>
       </div>
     )
 }
