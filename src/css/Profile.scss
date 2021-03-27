@@ -8,9 +8,8 @@ html {
 .section-container {
     display: block;
     margin-top: 3rem;
-    margin-left: 10%;
     height: auto;
-    width: calc(100% - 10% - 10%);
+    width: 100%;
     position: relative;
     box-sizing: content-box;
 
@@ -83,8 +82,8 @@ html {
                 }
                 
                 .container-logo {
+                    padding-left: .5rem;
                     float: left;
-                    padding-left: 1rem;
                     width: 56px;
                     height: 56px;
                     display: inline-block;
@@ -367,7 +366,7 @@ section {
 }
 
 .container-list {
-    padding-top: 2rem;
+    padding-top: 1.5rem;
     width: auto;
     height: auto;
 }

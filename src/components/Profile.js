@@ -9,18 +9,24 @@ import unc from '../images/unc2.png'
 
 function Profile() {
 
+  /* Properties of images */
   const size = ((0.15625 * window.innerWidth) > 100 ? 100 : 0.15625 * window.innerWidth)
   const [img_size, setImgSize] = useState({'width':`${size + "px"}`, 'height':`${size + "px"}`})
+  /* Properties of backtoTop button */
   const [display, setDisplay] = useState('none');
   const [opacity, setOpacity] = useState('0');
-  const [selected_skill, setSelectedSkill] = useState('');
-
-  const first_section = useRef();
-
   const style_backto_Top = {
     display: display,
     opacity: opacity,
   };
+  /* Properties of container-edu */
+  const margin = size + 10
+  const [marginleft, setMarginleft] = useState({'margin-left':`${margin + "px"}`})
+
+  const [selected_skill, setSelectedSkill] = useState('');
+
+  const first_section = useRef();
+  const container_logo = useRef();
 
   const experiences_list = [
     {
@@ -49,6 +55,7 @@ function Profile() {
   ]
 
   useEffect(() => {
+
     const handleScroll = () => {
       const { y } = first_section.current.getBoundingClientRect()
       setOpacity(((y-100)<=0 ? '1' : '0'))
@@ -57,8 +64,10 @@ function Profile() {
 
     const handleResize = () => {
       const size = ((0.15625 * window.innerWidth) > 100 ? 100 : 0.15625 * window.innerWidth)
-      const x = (size) + "px";
+      const x = (size) + "px"
       setImgSize({'width':`${x}`, 'height':`${x}`})
+      const margin = size + 10
+      setMarginleft({'margin-left':`${margin + "px"}`})
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -167,10 +176,10 @@ function Profile() {
                 (edu) => (
                   <li>
                     <div class='intra-li'>
-                      <div class='container-logo'>
+                      <div ref={container_logo} class='container-logo'>
                         <img style={img_size} src={unc}/>
                       </div>
-                      <div class='container-edu'>
+                      <div class='container-edu' style={marginleft}>
                         <h5>{edu.title}</h5>
                         <h6>{edu.institute}</h6>
                         <p id='duration'>{edu.duration}</p>
