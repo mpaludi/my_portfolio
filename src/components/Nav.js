@@ -4,6 +4,9 @@ import me from '../images/me.jpg'
 
 
 function Nav() {
+  const hideNav = () => {
+    document.getElementById("show-nav").click()
+  }
   return (
     <div class="container-nav">
         <input type="checkbox" id="show-nav"/>
@@ -18,14 +21,19 @@ function Nav() {
             </a>
           </div>
           <ul class="mi-header-menu">
-            <li> <a href="/resume"> <span>Resume</span> </a>
+            <li> <a onClick={hideNav} href="#home"><span>Home</span></a>
             </li>
-            <li><a href="/profile"><span>Profile</span></a>
+            <li><a onClick={hideNav} href="#profile"><span>Profile</span></a>
             </li>
-            <li><a href="/projects">
-              <span>Projects</span></a>
+            <li><a onClick={hideNav} href="#skills"><span>Skills</span></a>
             </li>
-            <li><a href="/contact"><span>Contact</span></a>
+            <li><a onClick={hideNav} href="#experiences"><span>Experience</span></a>
+            </li>
+            <li><a onClick={hideNav} href="#education"><span>Education</span></a>
+            </li>
+            <li><a onClick={hideNav} href="#projects"><span>Projects</span></a>
+            </li>
+            <li><a onClick={hideNav} href="#contact"><span>Contact</span></a>
             </li>
           </ul>
         </div>

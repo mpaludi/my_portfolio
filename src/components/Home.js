@@ -1,11 +1,11 @@
 import React from 'react';
-import '../css/AboutMe.scss'
+import '../css/Home.scss'
 import '../css/Button.scss'
 import { useMediaQuery } from "react-responsive";
 import '../css/Nav.scss';
 import me from '../images/me.jpg'
 
-function AboutMe() {
+function Home() {
 
   const isPhone = useMediaQuery({query: `(max-width: 600px)`});
 
@@ -28,7 +28,7 @@ function AboutMe() {
 
   return(
     <> 
-      <div className="AboutMe">
+      <div className="home">
         <div id='container'>
           {
             isPhone ? (
@@ -40,7 +40,7 @@ function AboutMe() {
               ) : (<div/>)
           
           }
-          <p id='aboutme-intro'>
+          <p id='home-intro'>
             <cite>
               {texts.introEN}
             </cite>
@@ -48,18 +48,23 @@ function AboutMe() {
           <p id='name'>
             <strong>Mariano Paludi</strong>
           </p>
-          <p id='aboutme'>
+          <p id='home'>
             <cite>
               {texts.aboutmeEN}
             </cite>
           </p>
           <div class='container-button'>
-            <button class="button-style check-profile" onClick={()=>{window.location.href = `${window.location.href}profile`}}>Check profile</button>
+            <button class="button-style check-profile" onClick={()=>{window.location.href = "#profile"}}>Check profile</button>
           </div>
+          <div class="get-cv">
+          <button class="button-style get-cv" onClick={() => {window.location.href = "https://drive.google.com/file/d/1HBrgH2phYVpgcXlZtRy7HXt3WOvPYSWX/view?usp=sharing"}}>
+          Get CV
+          </button>
+        </div>
         </div>
       </div>
     </>
   )
 }
 
-export default AboutMe;
+export default Home;

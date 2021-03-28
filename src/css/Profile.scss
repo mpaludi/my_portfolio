@@ -53,8 +53,74 @@ html {
                 }
             }
         }
+
+        &.educations {
+            display:block;
+            line-height: 60px;
     
-        &.knowledge, &.strengths, &.experiences, &.educations {
+            li {
+                padding: 0;
+                margin-right: 0.5rem;
+                margin-left: 0.5rem;
+                vertical-align: baseline;
+    
+                h5 {
+                    text-align: left;
+                    font-size:larger;
+                    line-height: 30px;
+                    margin: 0;
+                    color: antiquewhite;
+                }
+    
+                h6 {
+                    padding-left: 10px;
+                    text-align: left;
+                    font-size: 16px;
+                    line-height: 16px;
+                    margin: 0;
+                    color: rgb(170, 159, 144);
+                }
+                
+                .container-logo {
+                    padding: 0;
+                    float: left;
+                    width: 56px;
+                    height: 56px;
+                    display: inline-block;
+                }
+                
+                .container-edu{
+                    float: left;
+                    position: absolute;
+                    display: block;
+                }
+    
+                .intra-li {
+                    margin-bottom: 5rem;
+                    float: left;
+                    width: 100%!important;
+                    display: flex!important;
+                    flex-direction: column!important;
+                    align-items: flex-start;
+                }
+            }
+            p {
+                text-align: left;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                font-family: Nunito,sans-serif;
+                color: #a4acc4;
+                font-weight: 400;
+                font-size: 1rem;
+    
+                &#duration {
+                    margin-left: 1rem;
+                    padding: 0;
+                }
+            }
+        }
+
+        &.knowledge, &.strengths, &.experiences {
             display:block;
             line-height: 60px;
     
@@ -79,21 +145,6 @@ html {
                     line-height: 16px;
                     margin: 0;
                     color: rgb(170, 159, 144);
-                }
-                
-                .container-logo {
-                    padding-left: .5rem;
-                    float: left;
-                    width: 56px;
-                    height: 56px;
-                    display: inline-block;
-                }
-                
-                .container-edu{
-                    float: left;
-                    position: absolute;
-                    margin-left: 8.25rem;
-                    display: block;
                 }
     
                 .intra-li {
@@ -130,13 +181,12 @@ section {
     display: block;
     height: auto;
     width: 100%;
-    margin-top: 30%;
-    &.is-last{
-        margin-bottom: 80%;
-    }
+    margin-bottom: 200px;
     &.is-first{
-        margin-top: 80px;
-        height: 80vh;
+        margin-top: 15%;
+    }
+    &.is-last {
+        margin-bottom: 0;
     }
 }
 
@@ -247,8 +297,9 @@ section {
         a { 
             padding: 20px 0px;
             text-transform: uppercase;
-            margin: 1.2rem;
-            font-size: 0.94rem;
+            margin-right: .6rem;
+            margin-left: .6rem;
+            font-size: 0.7rem;
             letter-spacing: 1px;
             display: block;
             color: rgb(164, 172, 196);
@@ -268,7 +319,7 @@ section {
                 left: 50%;
                 position: absolute;
                 background-color: rgb(164, 172, 196);
-                bottom: 0;
+                bottom: 10px;
                 transition: all .7s;
                 height: 3px;
             }
@@ -310,7 +361,7 @@ section {
     height: 50px;
     line-height: 49px;
     border-radius: 50%;
-    background-color: rgb(0, 0, 0);
+    background-color: $whatsapp;
     text-align: center;
     overflow: hidden;
     transition: all 0.5s;

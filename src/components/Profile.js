@@ -11,7 +11,9 @@ function Profile() {
 
   /* Properties of images */
   const size = ((0.15625 * window.innerWidth) > 100 ? 100 : 0.15625 * window.innerWidth)
+  const size_logo = ((0.05625 * window.innerWidth) > 100 ? 100 : 0.05625 * window.innerWidth)
   const [img_size, setImgSize] = useState({'width':`${size + "px"}`, 'height':`${size + "px"}`})
+  const [logo_size, setLogosize] = useState({'width':`${size_logo + "px"}`, 'height':`${size_logo + "px"}`})
   /* Properties of backtoTop button */
   const [display, setDisplay] = useState('none');
   const [opacity, setOpacity] = useState('0');
@@ -20,12 +22,12 @@ function Profile() {
     opacity: opacity,
   };
   /* Properties of container-edu */
-  const margin = size + 10
+  const margin = size_logo + 30
   const [marginleft, setMarginleft] = useState({'margin-left':`${margin + "px"}`})
 
   const [selected_skill, setSelectedSkill] = useState('');
 
-  const first_section = useRef();
+  const sec_profile = useRef();
   const container_logo = useRef();
 
   const experiences_list = [
@@ -35,9 +37,9 @@ function Profile() {
       description: 'Adding experience I share one of my projects, this same personal portfolio (which is in process), created with React, in which I introduce myself, I give information about my skills, etc..'
     },
     {
-      position: 'Frontend Developer - for Software Engineering professors (FAMAF-UNC)',
+      position: 'FullStack Developer - for Software Engineering professors (FAMAF-UNC)',
       period: 'August 2020 - December 2020',
-      description: 'I was part of a team of developers, taking the position named above, and in turn performing some tasks of the backend, to carry out the realization of a game similar to Secret Voldemort. In it I was acquiring experience in React, in managing contexts, etc. In the projects section you will find a link to github to see it.'
+      description: 'I was part of a team of developers, taking the position frontend developer, and in turn performing some tasks of the backend, to carry out the realization of a game similar to Secret Voldemort. In it I was acquiring experience in React, in managing contexts, etc. In the projects section you will find a link to github to see it.'
     },
   ]
 
@@ -57,16 +59,19 @@ function Profile() {
   useEffect(() => {
 
     const handleScroll = () => {
-      const { y } = first_section.current.getBoundingClientRect()
-      setOpacity(((y-100)<=0 ? '1' : '0'))
-      setDisplay((y-100)<=0 ? 'flex' : 'none')
+      const { y } = sec_profile.current.getBoundingClientRect()
+      setOpacity(((y)<=0 ? '1' : '0'))
+      setDisplay((y)<=0 ? 'flex' : 'none')
     }
 
     const handleResize = () => {
       const size = ((0.15625 * window.innerWidth) > 100 ? 100 : 0.15625 * window.innerWidth)
+      const logo_size = ((0.05625 * window.innerWidth) > 100 ? 100 : 0.05625 * window.innerWidth)
       const x = (size) + "px"
+      const y = (logo_size) + "px"
       setImgSize({'width':`${x}`, 'height':`${x}`})
-      const margin = size + 10
+      setLogosize({'width':`${y}`, 'height':`${y}`})
+      const margin = logo_size + 30
       setMarginleft({'margin-left':`${margin + "px"}`})
     }
 
@@ -120,29 +125,32 @@ function Profile() {
     if (language === "ES") {
       return(
         <p>
-          Estudiante de computación, cursando el cuarto año, 
+          <b>Estudiante de computación</b>, cursando el cuarto año, 
           con muchas ganas de insertarse en el mundo laboral 
           garantizando una gran capacidad para resolver problemas, 
-          y una fácil adaptación ante cualquier tecnología.
+          y una <b>fácil adaptación</b> ante cualquier tecnología.
           <br/> 
-          Sociable, por lo que me gusta trabajar en equipo y ayudar al resto. (Amo el metodo SCRUM)
+          <b>Buen compañero de trabajo</b>, siempre dispuesto a ayudar al resto.
           Me gustan mucho los nuevos desafios
           ya que son los que me impulsan a mejorar cada dia.
           <br/>
-          Proactivo, y con muchas ganas de seguir aprendiendo. 
+          <b>Proactivo</b>, y con muchas ganas de seguir aprendiendo. 
+          Aunque no tengo experiencia bajo una relación de dependencia formal, puedo garantizar que con todos los conocimientos adquiridos en mi carrera durante estos años, junto con mi entusiasmo y ganas de seguir aprendiendo, puedo desempeñarme correcta y eficazmente en cualquier área a la que se me convoque.
         </p>
       )
     } else {
       return(
         <p class="text">
-          Computer science student, in his fourth year, eager to enter the working world,
+          <b>Computer science student</b>, in his fourth year, eager to enter the working world,
           with a great ability to solve problems,
-          and an easy adaptation to any technology.
+          and an <b>easy adaptation</b> to any technology.
           <br/> 
-          Sociable, so I like to work in a team and help others (I love the SCRUM method).
+          <b>Good coworker</b>, always willing to help others.
           I really like new challenges as they are the ones that drive me to improve every day.
           <br/>
-          Proactive, and eager to keep learning.
+          <b>Proactive</b>, and eager to keep learning.
+          <br/>
+          Although I do not have experience under a formal dependency relationship, I can guarantee that with all the knowledge acquired in my career during these years, along with my enthusiasm and desire to continue learning, I can perform correctly and efficiently in any area that I am assigned.
         </p>
       )
     }
@@ -169,7 +177,7 @@ function Profile() {
 
   const list_education = () => {
     return (
-      <div class='container-list'>
+      <div class='container-list' style={{'padding-left':'1rem'}}>
         <ul class='in-section educations'>
             {
               education_list.map(
@@ -177,7 +185,7 @@ function Profile() {
                   <li>
                     <div class='intra-li'>
                       <div ref={container_logo} class='container-logo'>
-                        <img style={img_size} src={unc}/>
+                        <img style={logo_size} src={unc}/>
                       </div>
                       <div class='container-edu' style={marginleft}>
                         <h5>{edu.title}</h5>
@@ -196,14 +204,13 @@ function Profile() {
   return(
     <div className="page-container">
       <div class="section-container">
-        {nav('main',['skills', 'experiences', 'education'])}
-        <section id="profile-home" class='is-first'>
-          <h2 class="profile" >Profile</h2>
+        <section id="profile-home">
+          <h2 ref={sec_profile} class="profile" >Profile</h2>
           <div className="page-content">
               {text("EN")}
           </div>
         </section>
-        <section ref={first_section} id="skills">
+        <section id="skills">
           <div class="header-section">
             <h2 class="skills">Main skills</h2>
           </div>
@@ -231,7 +238,7 @@ function Profile() {
           </div>
         </section>
       </div>
-      <a style={style_backto_Top} href="#profile-home" class="backto-top">
+      <a style={style_backto_Top} href="#home" class="backto-top">
         <FiChevronUp/>
       </a>
     </div>

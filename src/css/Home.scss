@@ -1,0 +1,57 @@
+.home {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(18, 20, 31);
+    padding-left: 300px;
+    min-height: 100vh;
+    @media screen and (max-width: 600px) {
+        padding-left: 0;
+    }
+    
+    .get-cv {
+        margin-top: 3rem;
+        text-align: center;
+    }
+
+    #home-intro {
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 0;
+        color:rgb(164, 172, 196);
+    }
+    
+    
+    #home {
+        color: rgb(164, 172, 196);
+        margin-left: 5%;
+        margin-right: 5%;
+        text-align: center;
+    }
+    
+    #container-img {
+        height: auto;
+        width: auto;
+        overflow: hidden;
+    }
+    
+    #container-img img {
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        padding-top: 15%;
+        overflow: hidden;
+    }
+    
+    #name {
+        text-align: center;
+        font-size: calc(30px + 4vw);
+        color:rgb(255, 255, 255);
+        margin-top: 0%;
+        margin-left: 5%;
+        margin-right: 5%;
+        text-shadow: 2px 2px 5px rgb(20, 20, 20);;
+    }
+}
+
+
+

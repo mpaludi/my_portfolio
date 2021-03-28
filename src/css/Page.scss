@@ -16,10 +16,11 @@
 }
 
 .page-container h2 {
+    user-select: none;
     background-color: $bg-container-page;
     color: rgb(164, 172, 196);
     text-align: center;   
-    font-size: 10em; // 1.48
+    font-size: 6rem; // 1.48
     text-transform: uppercase;
     font-style: italic;
     padding: 0;
@@ -28,23 +29,23 @@
     position: relative;
 
     @media screen and (max-width: 1024px){ // Tablet
-        font-size: 7em;
+        font-size: 5em;
     }
 
     @media screen and (max-width: 768px){ // Tablet
-        font-size: 6.04587156em;
+        font-size: 3.6em;
     }
 
     @media screen and (max-width: 425px){ // Mobile L
-        font-size: 5.3em;
+        font-size: 3em;
     }
 
     @media screen and (max-width: 375px){ // Mobile M
-        font-size: 4.6em;
+        font-size: 2.8em;
     }
 
     @media screen and (max-width: 320px) { // Mobile S
-        font-size: 4em;
+        font-size: 2.6em;
     }
 
     &::after {
@@ -64,44 +65,6 @@
         top: 0;
         opacity: 35%;
         position:fixed;
-    }
-    &.contact::before {
-        content: "CONTACT";
-    }
-    &.profile::before {
-        content: "PROFILE";
-    }
-    &.projects::before {
-        content: "PROJECTS";
-    }
-    &.interests::before {
-        content: "INTERESTS";
-    }
-    &.resume::before {
-        content: "RESUME";
-    }
-    &.skills, &.experiences, &.education {
-        font-size: 6rem;
-
-        @media screen and (max-width: 1024px){ // Tablet
-            font-size: 5em;
-        }
-
-        @media screen and (max-width: 768px){ // Tablet
-            font-size: 3.6em;
-        }
-    
-        @media screen and (max-width: 425px){ // Mobile L
-            font-size: 3em;
-        }
-    
-        @media screen and (max-width: 375px){ // Mobile M
-            font-size: 2.8em;
-        }
-    
-        @media screen and (max-width: 320px) { // Mobile S
-            font-size: 2.6em;
-        }
     }
 }
 
@@ -129,9 +92,13 @@
         height: auto;
     }
     p {
+        font-family: Nunito, sans-serif;
         padding: 20px;
-        color: white;
+        color:#a4acc4;
         margin: 0;
         line-height: 28px;
+        b {
+            color: $whatsapp;
+        }
     }
 }
