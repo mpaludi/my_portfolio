@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import ig from '../images/social networks/ig.png'
 import wapp from '../images/social networks/wapp.png'
 import link from '../images/social networks/link.png'
 import emailjs from 'emailjs-com'
@@ -15,10 +14,6 @@ function Contact() {
   const icon_style = {'width': '50px', 'heigth': '50px'};
 
   const social_networks_list = [
-    {
-      img: ig,
-      href: 'https://instagram.com/mariano._paludi'
-    },
     {
       img: wapp,
       href: 'https://chatwith.io/s/6042bd6c999b8'
