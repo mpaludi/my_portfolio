@@ -9,6 +9,8 @@ import HtmlIcon from '../images/HtmlIcon.png'
 import CssIcon from '../images/CssIcon.png'
 import JsIcon from '../images/JsIcon.png'
 import MysqlIcon from '../images/MysqlIcon.png'
+import Angular from '../images/angular.png'
+import Django from '../images/django.jpg'
 
 function Skills(type, img_style) {
 
@@ -95,6 +97,14 @@ function Skills(type, img_style) {
       name: "CSS3",
       img: CssIcon
     },
+    {
+      name: "Angular",
+      img: Angular
+    },
+    {
+      name : "Django",
+      img: Django
+    }
   ]
     
   switch (type) {
@@ -161,12 +171,6 @@ function Skills(type, img_style) {
 
     default:
       return (<>
-      <h4 class='description-skill'>
-        Please select a skill class and get to know my skills. 
-      </h4>
-      <div class='loader-skills'>
-        <BeatLoader color="#0077b5" size={30} margin={16}/>
-      </div>
       </>);
   }
 }

@@ -25,7 +25,7 @@ function Profile() {
   const margin = size_logo + 30
   const [marginleft, setMarginleft] = useState({'margin-left':`${margin + "px"}`})
 
-  const [selected_skill, setSelectedSkill] = useState('');
+  const [selected_skill, setSelectedSkill] = useState("");
 
   const sec_profile = useRef();
   const container_logo = useRef();
@@ -57,6 +57,8 @@ function Profile() {
   ]
 
   useEffect(() => {
+
+    setSelectedSkill('technological')
 
     const handleScroll = () => {
       const { y } = sec_profile.current.getBoundingClientRect()
@@ -93,7 +95,7 @@ function Profile() {
           { (area !== "main") ? (
             <Scrollspy className="in-section" items={items}>
               {
-                items.map((item, i) => (
+                items.map((item) => (
                   <a style={{'cursor':'pointer'}} class={selected_skill === item ? "is-current" : ""}
                   onClick={() => {setSelectedSkill(item)}}>
                     {item}
