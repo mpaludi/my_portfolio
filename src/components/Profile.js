@@ -41,6 +41,11 @@ function Profile() {
       period: 'August 2020 - December 2020',
       description: 'I was part of a team of developers, taking the position frontend developer, and in turn performing some tasks of the backend, to carry out the realization of a game similar to Secret Voldemort. In it I was acquiring experience in React, in managing contexts, etc. In the projects section you will find a link to github to see it.'
     },
+    {
+      position: 'Software Developer - for Sum Tech Labs',
+      period: 'April 2021 - At present',
+      description: 'I am currently part of SumTechLabs, a software development company. In which I am in charge of the development of a web application for a company that offers maintenance to facilities. The objective is that they have to be able to track the incidents reported by their customers. I had to develop a login for three different types of users, and develop all the incident log logic. The technologies I decided to use were Angular (Front) and Django with its RestFramework (Back).'
+    },
   ]
 
   const education_list = [
