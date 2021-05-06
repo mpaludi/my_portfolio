@@ -6,6 +6,9 @@ import Scrollspy from 'react-scrollspy'
 import { FiChevronUp } from "react-icons/fi"
 import Skills from './Skills'
 import unc from '../images/unc2.png'
+import Courses from './Courses'
+import Education from './Education'
+import Experience from './Experience'
 
 function Profile() {
 
@@ -30,36 +33,7 @@ function Profile() {
   const sec_profile = useRef();
   const container_logo = useRef();
 
-  const experiences_list = [
-    {
-      position: 'Front-End Developer',
-      period: 'March 2021 - Currently',
-      description: 'Adding experience I share one of my projects, this same personal portfolio (which is in process), created with React, in which I introduce myself, I give information about my skills, etc..'
-    },
-    {
-      position: 'FullStack Developer - for Software Engineering professors (FAMAF-UNC)',
-      period: 'August 2020 - December 2020',
-      description: 'I was part of a team of developers, taking the position frontend developer, and in turn performing some tasks of the backend, to carry out the realization of a game similar to Secret Voldemort. In it I was acquiring experience in React, in managing contexts, etc. In the projects section you will find a link to github to see it.'
-    },
-    {
-      position: 'Software Developer - for Sum Tech Labs',
-      period: 'April 2021 - At present',
-      description: 'I am currently part of SumTechLabs, a software development company. In which I am in charge of the development of a web application for a company that offers maintenance to facilities. The objective is that they have to be able to track the incidents reported by their customers. I had to develop a login for three different types of users, and develop all the incident log logic. The technologies I decided to use were Angular (Front) and Django with its RestFramework (Back).'
-    },
-  ]
 
-  const education_list = [
-    {
-      title: 'Computer Analyst',
-      institute: 'National University of Cordoba',
-      duration: '2018 - 2020',
-    },
-    {
-      title: 'Computer Science',
-      institute: 'National University of Cordoba',
-      duration: '2018 - 2022',
-    },
-  ]
 
   useEffect(() => {
 
@@ -163,50 +137,6 @@ function Profile() {
     }
   };
 
-  const list_experiences = () => {
-    return (
-      <div class='container-list'>
-        <ul class='in-section experiences'>
-            {
-              experiences_list.map(
-                (exp) => (
-                  <li>
-                    <h5>{exp.position}</h5>
-                    <h6>{exp.period}</h6>
-                    <p>{exp.description}</p>
-                  </li>
-                ))
-            }
-        </ul>
-      </div>
-    )
-  } 
-
-  const list_education = () => {
-    return (
-      <div class='container-list' style={{'padding-left':'1rem'}}>
-        <ul class='in-section educations'>
-            {
-              education_list.map(
-                (edu) => (
-                  <li>
-                    <div class='intra-li'>
-                      <div ref={container_logo} class='container-logo'>
-                        <img style={logo_size} src={unc}/>
-                      </div>
-                      <div class='container-edu' style={marginleft}>
-                        <h5>{edu.title}</h5>
-                        <h6>{edu.institute}</h6>
-                        <p id='duration'>{edu.duration}</p>
-                      </div>
-                    </div>
-                  </li>
-                ))
-            }
-        </ul>
-      </div>
-    )
-  }
 
   return(
     <div className="page-container">
@@ -229,20 +159,13 @@ function Profile() {
           </div>
         </section>
         <section id="experiences">
-          <div class="header-section">
-            <h2 class="experiences">Experiences</h2>
-          </div>
-          <div className="page-content">
-            {list_experiences()}
-          </div>
+          <Experience/>
         </section>
-        <section id="education" class="is-last">
-          <div class="header-section">
-            <h2 class="education">Education</h2>
-          </div>
-          <div className="page-content">
-            {list_education()}
-          </div>
+        <section id="education">
+          <Education marginleft={marginleft} content_logo={container_logo} logo_size={logo_size}/>
+        </section>
+        <section id="courses" class="is-last">
+          <Courses margin_left={marginleft} content_logo={container_logo} logo_size={logo_size}/>
         </section>
       </div>
       <a style={style_backto_Top} href="#home" class="backto-top">
