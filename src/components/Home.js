@@ -57,7 +57,7 @@ function Home() {
             <button class="button-style check-profile" onClick={()=>{window.location.href = "#profile"}}>Check profile</button>
           </div>
           <div class="get-cv">
-          <button class="button-style get-cv" onClick={() => {window.location.href = "https://drive.google.com/file/d/1HBrgH2phYVpgcXlZtRy7HXt3WOvPYSWX/view?usp=sharing"}}>
+          <button class="button-style get-cv" onClick={() => {window.location.href = "https://drive.google.com/file/d/1-Ft7kt79cja9td31k4MnsODtQGsk_I1X/view?usp=sharing"}}>
           Get CV
           </button>
         </div>
